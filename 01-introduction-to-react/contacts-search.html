@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world</title>
+  <script src="https://fb.me/react-0.14.3.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <style>
+    .contacts {
+      width: 300px;
+      margin: 0 auto;
+    }
+    .search-field {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .contacts-list {
+      padding: 0;
+      width: 100%;
+    }
+
+    .contact {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border-bottom: 1px dotted grey;
+    }
+
+    .contact-name {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id='content'></div>
+  <script type="text/babel">
+
+    var CONTACTS = [{
+        name: 'Darth Vader',
+        phoneNumber: '+250966666666'
+      }, {
+        name: 'Princess Leya',
+        phoneNumber: '+250966344466'
+      }, {
+        name: 'Luke',
+        phoneNumber: '+250976654433'
+      }
+    ];
+
+    var ContactsList = React.createClass({
+      getInitialState: function() {
+        return {
+          filteredContacts: CONTACTS
+        };
+      },
+
+      handleFilterChange: function(e) {
+        var search = e.target.value.toLowerCase();
+        var filteredContacts = CONTACTS.filter(function(contact) {
+          var contactName = contact.name.toLowerCase();
+          return contactName.indexOf(search) !== -1;
+        });
+
+        this.setState({
+          filteredContacts : filteredContacts
+        });
+      },
+
+      render: function() {
+        return (
+          <div className='contacts'>
+            <input className='search-field' type='text' placeholder='Search contacts' onChange={this.handleFilterChange}/>
+            <ul className='contacts-list'>
+            {
+              this.state.filteredContacts.map(function(contact) {
+                return (
+                  <li className='contact'>
+                    <div className='contact-name'> {contact.name} </div>
+                    <div className='contact-number'> {contact.phoneNumber} </div>
+                  </li>
+                );
+              })
+            }
+            </ul>
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <ContactsList />,
+      document.getElementById('content')
+    );
+  </script>
+</body>
+</html>
