@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world</title>
+  <script src="https://fb.me/react-0.14.3.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+  <div id='content'></div>
+  <script type="text/babel">
+    var HelloWorld = React.createClass({
+      getInitialState: function() {
+        return {
+          name: ''
+        };
+      },
+
+      handleNameChange: function(e) {
+        this.setState({
+          name : e.target.value
+        });
+      },
+
+      render: function() {
+        return (
+          <div>
+            <input type='text' placeholder='Input your name here' value={this.state.name} onChange={this.handleNameChange}/>
+            <h1> Hello, {this.state.name}! </h1>
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <HelloWorld />,
+      document.getElementById('content')
+    );
+  </script>
+</body>
+</html>
