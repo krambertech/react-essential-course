@@ -3,49 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Contacts search</title>
-  <script src="https://fb.me/react-0.14.3.js"></script>
-  <script src="https://fb.me/react-dom-0.14.3.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-  <style>
-    .contacts {
-      width: 300px;
-      margin: 0 auto;
-    }
-    .search-field {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-    }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
 
-    .contacts-list {
-      padding: 0;
-      width: 100%;
-    }
-
-    .contact {
-      display: flex;
-      align-items: center;
-      font-family: sans-serif;
-      width: 100%;
-      padding: 5px;
-      border-bottom: 1px dotted grey;
-    }
-
-    .contact-image {
-        border-radius: 50%;
-        margin: 5px;
-    }
-
-    .contact-name {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .contact-number {
-      font-size: 18px;
-      color: grey;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id='content'></div>
@@ -109,7 +71,7 @@
             <ul className='contacts-list'>
             {
               this.state.filteredContacts.map(function(contact) {
-                return <Contact name={contact.name} phoneNumber={contact.phoneNumber} image={contact.image}/>;
+                return <Contact name={contact.name} phoneNumber={contact.phoneNumber} image={contact.image} />;
               })
             }
             </ul>
