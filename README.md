@@ -1,2 +1,17 @@
-# react-essential-course
-ITVDN - React Essential course materials
+# Курс React Essential
+ITVDN - Information Technology Video Developer Network
+
+## Урок 1 - Введение в React
+
+1. Немного о курсе
+2. Что такое React?
+3. Когда и почему стоит использовать React?
+4. Что такое виртуальный DOM и как он работает
+5. Рендеринг данных в React - JSX!
+6. Первый компонент - Hello world.
+7. Props у компонентов
+8. State компонентов, методы getInitialState и setState
+9. Пример. Отображение списка контактов
+10. Обработка событий в React, делаем компоненты динамическими
+11. Пример. Динамический поиск по списку контактов
+

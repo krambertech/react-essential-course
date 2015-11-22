@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello world</title>
+  <title>Contacts search</title>
   <script src="https://fb.me/react-0.14.3.js"></script>
   <script src="https://fb.me/react-dom-0.14.3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -23,32 +23,65 @@
     }
 
     .contact {
-      display: block;
+      display: flex;
+      align-items: center;
+      font-family: sans-serif;
       width: 100%;
-      padding: 10px;
+      padding: 5px;
       border-bottom: 1px dotted grey;
     }
 
+    .contact-image {
+        border-radius: 50%;
+        margin: 5px;
+    }
+
     .contact-name {
+      font-size: 20px;
       font-weight: bold;
+    }
+
+    .contact-number {
+      font-size: 18px;
+      color: grey;
     }
   </style>
 </head>
 <body>
   <div id='content'></div>
   <script type="text/babel">
-
     var CONTACTS = [{
         name: 'Darth Vader',
-        phoneNumber: '+250966666666'
+        phoneNumber: '+250966666666',
+        image: 'http://cs7.pikabu.ru/images/big_size_comm_an/2014-03_7/13962622876915.gif'
       }, {
-        name: 'Princess Leya',
-        phoneNumber: '+250966344466'
+        name: 'Princess Leia',
+        phoneNumber: '+250966344466',
+        image: 'http://images6.fanpop.com/image/photos/33100000/CARRIE-FISHER-anakin-vader-and-princess-leia-33186069-190-149.gif'
       }, {
-        name: 'Luke',
-        phoneNumber: '+250976654433'
+        name: 'Luke Skywalker',
+        phoneNumber: '+250976654433',
+        image: 'http://www.youshouldshare.me/wp-content/uploads/2015/03/14264215682890-anigif_enhanced-buzz-13518-1367608452-4.gif'
+      }, {
+        name: 'Chewbacca',
+        phoneNumber: '+250456784935',
+        image: 'https://media.giphy.com/media/RUUdVZqwpfTRS/giphy.gif'
       }
     ];
+
+    var Contact = React.createClass({
+      render: function() {
+        return (
+          <li className='contact'>
+            <img className='contact-image' src={this.props.image} width='80px' height='80px' />
+            <div>
+                <div className='contact-name'> {this.props.name} </div>
+                <div className='contact-number'> {this.props.phoneNumber} </div>
+            </div>
+          </li>
+        );
+      }
+    });
 
     var ContactsList = React.createClass({
       getInitialState: function() {
@@ -65,7 +98,7 @@
         });
 
         this.setState({
-          filteredContacts : filteredContacts
+          filteredContacts: filteredContacts
         });
       },
 
@@ -76,12 +109,7 @@
             <ul className='contacts-list'>
             {
               this.state.filteredContacts.map(function(contact) {
-                return (
-                  <li className='contact'>
-                    <div className='contact-name'> {contact.name} </div>
-                    <div className='contact-number'> {contact.phoneNumber} </div>
-                  </li>
-                );
+                return <Contact name={contact.name} phoneNumber={contact.phoneNumber} image={contact.image}/>;
               })
             }
             </ul>
