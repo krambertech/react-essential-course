@@ -30,6 +30,8 @@ ITVDN - Information Technology Video Developer Network
  - ```Jquery Snippet Pack``` - набор сниппетов для jQuery
  - ```babel``` – Подсветка для ECMAScript6, подсветка JSX
  - ```babel-snippet``` - сниппеты для React
+ 
+Также можно использовать [Atom](https://atom.io/), [WebStorm](https://www.jetbrains.com/webstorm/), [Nuclide](http://nuclide.io/), [Visual Studio](https://www.visualstudio.com/) или другие.
 
 #### Как писать код?
 
