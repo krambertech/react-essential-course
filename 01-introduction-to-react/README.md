@@ -78,7 +78,9 @@ var app = <h1>
 ```jsx
 var age = 20;
 
-var app = <h1> Hi! { age > 18 ? 'Your age is more than 18!' : 'Your age is less than 18!' } </h1>;
+var app = <h1> 
+    Hi! { age > 18 ? 'Your age is more than 18!' : 'Your age is less than 18!' } 
+</h1>;
 ```
 
 #### Компоненты
