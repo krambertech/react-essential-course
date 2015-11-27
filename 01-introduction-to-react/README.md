@@ -70,8 +70,8 @@ function getMyName() {
     return 'Katya';
 }
 
-var app = <h1> 
-    My name is {getMyName()}! 
+var app = <h1>
+    My name is {getMyName()}!
 </h1>;
 ```
 
@@ -100,7 +100,7 @@ var HelloWorld = React.createClass({
 
 #### Параметры aka props
 
-Каждый компонент может принимать параметры. Они передаются из выше стоящих компонентов.  К параметрам компонента можно обращаться используя ```this.props.propName```. 
+Каждый компонент может принимать параметры. Они передаются из выше стоящих компонентов.  К параметрам компонента можно обращаться используя ```this.props.propName```.
 
 ```jsx
 var Heading = React.createClass({
@@ -129,13 +129,13 @@ var Component = React.createClass({
       name : "Katya"
     };
   },
-  
+
   handleClick : function() {
     this.setState({
       name : "Vasya"
     });
   },
-  
+
   render : function() {
     return <div onClick={this.handleClick}>
       Hello, {this.state.name}
@@ -151,28 +151,28 @@ var Component = React.createClass({
 
 #### Обработка событий
 
-Если вы захотите сделать свои компоненты динамическими, то вам не обойтись без использования событий. Обычно, для каждого события описывается обработчик, в котором вы можете произвести какие-то действия. 
+Если вы захотите сделать свои компоненты динамическими, то вам не обойтись без использования событий. Обычно, для каждого события описывается обработчик, в котором вы можете произвести какие-то действия.
 
 ```jsx
 var HelloComponent = React.createClass({
   handleClick : function() {
     alert('Hello stranger!');
   },
-  
+
   render : function() {
     return <button onClick={this.handleClick}> Say hello </button>;
   }
 });
 ```
 
-Во все такие обработчики событий в качестве аргумента приходит объект ```SyntheticEvent```. Это объект, который является кроссбраузерной оберткой над стандартными событиями. 
+Во все такие обработчики событий в качестве аргумента приходит объект ```SyntheticEvent```. Это объект, который является кроссбраузерной оберткой над стандартными событиями.
 
 ```jsx
 var EventComponent = React.createClass({
   handleClick : function(event) {
     alert('Event handled - ' + event.type); // Event handled - click
   },
-  
+
   render : function() {
     return <button onClick={this.handleClick}> Click me </button>;
   }
@@ -192,6 +192,12 @@ var EventComponent = React.createClass({
  - Как изменить состояние компонента?
  - Как определить первоначальное состояние компонента?
  - Зачем нужен key в React?
+
+## Примеры из видео
+
+ - [Hello World](/00-template/index.html)
+ - [Используем параметры](/01-using-props/index.html)
+ - [Поиск по списку контактов](/02-contacts-search/index.html)
 
 ## Материалы
 
