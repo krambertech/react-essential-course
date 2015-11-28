@@ -36,3 +36,7 @@ ITVDN - Information Technology Video Developer Network
 #### Как писать код?
 
 Очень советую ознакомиться с [Javascript style quide](https://github.com/airbnb/javascript).
+
+#### Нашли ошибку или опечатку?
+
+Исправляйте и создавайте pull-request :)
