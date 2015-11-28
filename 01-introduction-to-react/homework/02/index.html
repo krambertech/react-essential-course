@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+</head>
+<body>
+    <div id='content'></div>
+
+    <script type="text/babel">
+        var HelloComponent = React.createClass({
+            getInitialState: function() {
+                return {
+                    name: ''
+                };
+            },
+
+            handleNameChange: function(event) {
+                this.setState({
+                    name: event.target.value
+                });
+            },
+
+            render: function() {
+                return (
+                    <div>
+                        <input type="text" onChange={this.handleNameChange} />
+                        <h1> Hello {this.state.name || 'stranger'}! </h1>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <HelloComponent />,
+            document.getElementById('content')
+        );
+    </script>
+</body>
+</html>

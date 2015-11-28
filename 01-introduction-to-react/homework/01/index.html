@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+</head>
+<body>
+    <div id='content'></div>
+
+    <script type="text/babel">
+        var Article = React.createClass({
+            render: function() {
+                return (
+                    <div>
+                        <h3> {this.props.title} </h3>
+                        <p> {this.props.body} </p>
+                        <small> {this.props.author} </small>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <Article
+                title='In dui magna posuere'
+                author='Author Name'
+                body='Donec mollis hendrerit risus. Vestibulum volutpat pretium libero. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Praesent nonummy mi in odio. Vivamus quis mi. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Maecenas malesuada. Fusce ac felis sit amet ligula pharetra condimentum. Donec vitae orci sed dolor rutrum auctor. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Vestibulum eu odio. Pellentesque commodo eros a enim. Praesent venenatis metus at tortor pulvinar varius. Maecenas nec odio et ante tincidunt tempus. Sed cursus turpis vitae tortor. Ut varius tincidunt libero. In ut quam vitae odio lacinia tincidunt. Nam pretium turpis et arcu. Nunc nonummy metus. Aenean imperdiet. Cras non dolor. Etiam ut purus mattis mauris sodales aliquam. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Vivamus quis mi.'
+            />,
+            document.getElementById('content')
+        );
+    </script>
+</body>
+</html>
