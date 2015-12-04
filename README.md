@@ -28,7 +28,7 @@ ITVDN - Information Technology Video Developer Network
  - ```AutoFileName``` - Автозаполнение путей к подключаемым файлам
  - ```ColorHighlighter``` – [подсветка цвета в CSS/LESS](https://github.com/Monnoroch/ColorHighlighter)
  - ```Jquery Snippet Pack``` - набор сниппетов для jQuery
- - ```babel``` – Подсветка для ECMAScript6, подсветка JSX
+ - ```babel``` – Подсветка для ES6, подсветка JSX
  - ```babel-snippet``` - сниппеты для React
  
 Также можно использовать [Atom](https://atom.io/), [WebStorm](https://www.jetbrains.com/webstorm/), [Nuclide](http://nuclide.io/), [Visual Studio](https://www.visualstudio.com/) или другие.
