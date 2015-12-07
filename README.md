@@ -3,7 +3,8 @@ ITVDN - Information Technology Video Developer Network
 
 ## Содержание
 
- - [Введение в React](/01-introduction-to-react)
+ - [УРОК 1: Введение в React](/01-introduction-to-react)
+ - [УРОК 2: Подробнее о компонентах](/02-deep-in-components)
 
 ## Материалы
 
