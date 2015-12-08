@@ -116,7 +116,7 @@ shouldComponentUpdate: function(nextProps, nextState) {
 
 **componentWillUpdate**
 
-Вызывается перед вызовом метода ```render()``` при изменении параметров или состояния компонента.
+Вызывается **перед** вызовом метода ```render()``` при изменении параметров или состояния компонента.
 
 ```jsx
 componentWillUpdate: function(nextProps, nextState) {
@@ -129,13 +129,13 @@ componentWillUpdate: function(nextProps, nextState) {
 
 **componentDidUpdate**
 
-Вызывается сразу после вызова метода ```render()``` при изменении параметров или состояния компонента.
+Вызывается **сразу после** вызова метода ```render()``` при изменении параметров или состояния компонента.
 
 ```jsx
 componentDidUpdate: function(prevProps, prevState) {
     // в prevProps содержится объект с предыдущими параметрами
     // в prevState содержится объект с состоянием до изменения
-    // новые параметры и состояние могут быть получены через this.props и this.state
+    // измененные параметры и состояние могут быть получены через this.props и this.state
 }
 ```
 
