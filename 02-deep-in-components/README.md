@@ -94,7 +94,7 @@ componentWillReceiveProps: function(nextProps) {
 
 Вызывается при изменении параметров или состояния. Возвращает ```true``` (если изменение должно вызвать перерисовку компонента) или ```false``` (если изменение не влияет на отображение компонента).
 
-```
+```jsx
 shouldComponentUpdate: function(nextProps, nextState) {
     return nextProps.id !== this.props.id;
 }
@@ -106,7 +106,7 @@ shouldComponentUpdate: function(nextProps, nextState) {
 
 Вызывается перед вызовом метода ```render()``` при изменении параметров или состояния компонента.
 
-```
+```jsx
 componentWillUpdate: function(nextProps, nextState) {
     // в nextProps содержится объект с новыми параметрами
     // в nextState содержится объект с измененным состоянием
@@ -119,7 +119,7 @@ componentWillUpdate: function(nextProps, nextState) {
 
 Вызывается сразу после вызова метода ```render()``` при изменении параметров или состояния компонента.
 
-```
+```jsx
 componentDidUpdate: function(prevProps, prevState) {
     // в prevProps содержится объект с предыдущими параметрами
     // в prevState содержится объект с состоянием до изменения
@@ -136,13 +136,16 @@ componentDidUpdate: function(prevProps, prevState) {
 
 Вызывается перед тем, как компонент будет удален из DOM.
 
-```
+```jsx
 componentWillUnmount: function() {
     // обычно в данном методе прозсходит некая уборка за компонентом
     // остановка таймеров, удаление ссылок на DOM елементы и т.д.
 }
 ```
 
+**Весь жизненный цикл компонента можно представить в виде такой схемы**
+
+![Весь жизненный цикл компонента](/02-deep-in-components/images/004.png)
 
 
 ## Вопросы к самопроверке
