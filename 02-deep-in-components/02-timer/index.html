@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+</head>
+<body>
+    <div id='mount-point'></div>
+
+    <script type="text/babel">
+        var Timer = React.createClass({
+            getInitialState: function() {
+                return {
+                    seconds: 0
+                };
+            },
+
+            componentDidMount: function() {
+                this.timer = setInterval(this.tick, 1000);
+            },
+
+            tick: function() {
+                this.setState({ seconds: this.state.seconds + 1 });
+            },
+
+            componentWillUnmount: function() {
+                clearInterval(this.timer);
+            },
+
+            render: function() {
+                return (
+                    <h4> Уже прошло {this.state.seconds} секунд </h4>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <Timer />,
+            document.getElementById('mount-point')
+        );
+  </script>
+</body>
+</html>
