@@ -1,0 +1,15 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.note {
+    width:  200px;
+    height: auto;
+    float: left;
+    background: yellow;
+    margin: 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
