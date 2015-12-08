@@ -147,6 +147,35 @@ componentWillUnmount: function() {
 
 ![Весь жизненный цикл компонента](/02-deep-in-components/images/005.png)
 
+#### Дочерние компоненты
+
+Иногда вместо того, чтобы писать так:
+
+```jsx
+<Article author="Vasya Pupkin" text="Here is article itself" />
+```
+
+Очень хочется написать так:
+
+```jsx
+<Article author="Vasya Pupkin"> Here is article itself </Article>
+```
+
+Для таких случаев существуют ```this.props.children```. В компоненте ```Article``` можно просто обратиться к ним для получения всего между открывающимся и закрывающимся тегами.
+
+```jsx
+var Acricle = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <p>{this.props.children}</p>
+                by {this.props.author}
+            </div>
+        );
+    }
+});
+```
+
 
 ## Вопросы к самопроверке
 
@@ -158,11 +187,11 @@ componentWillUnmount: function() {
 
 ## Материалы
 
- - Установка node и npm
+ - Установка **node** и **npm**
     - Для Windows - [скачать .msi](https://nodejs.org/en/#download)
     - Для Unix систем - ```curl -L https://npmjs.org/install.sh | sh``` в терминале
     - Для Mac - [скачать .pkg](https://nodejs.org/dist/v4.2.3/node-v4.2.3.pkg) или ```brew install node```, если используете [Homebrew](http://brew.sh/)
- - Установка и использование ```http-server```
+ - Установка и использование **http-server**
     - [документация на npm](https://www.npmjs.com/package/http-server)
     - чтобы установить пишем: ```npm install http-server -g```
     - для того, чтобы поднять сервер: ```http-server -p 8081```
