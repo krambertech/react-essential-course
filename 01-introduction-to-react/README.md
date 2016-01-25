@@ -1,6 +1,6 @@
 # Урок 1 - Введение в React
 
-[мини-тест по содержанию урока (5 минут)](http://itsquiz.com/ru/activations/566533792ba96aaf3c016c34)
+[мини-тест по содержанию урока (5 минут)](http://itsquiz.com/activations/566533792ba96aaf3c016c34?ref=reactjs-essential)
 
 ## Резюме
 
@@ -80,8 +80,8 @@ var app = <h1>
 ```jsx
 var age = 20;
 
-var app = <h1> 
-    Hi! { age > 18 ? 'Your age is more than 18!' : 'Your age is less than 18!' } 
+var app = <h1>
+    Hi! { age > 18 ? 'Your age is more than 18!' : 'Your age is less than 18!' }
 </h1>;
 ```
 
