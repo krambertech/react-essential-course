@@ -200,9 +200,9 @@ var EventComponent = React.createClass({
 
 ## Примеры из видео
 
- - Hello World [код](/01-introduction-to-react/00-template/index.html)
- - Используем параметры [код](/01-introduction-to-react/01-using-props/index.html)
- - Поиск по списку контактов [код](/01-introduction-to-react/02-contacts-search/index.html) [демо](http://krambertech.github.io/react-essential-course/contacts/)
+ - Hello World [[код]](/01-introduction-to-react/00-template/index.html)
+ - Используем параметры [[код]](/01-introduction-to-react/01-using-props/index.html)
+ - Поиск по списку контактов [[код]](/01-introduction-to-react/02-contacts-search/index.html) [[demo]](http://krambertech.github.io/react-essential-course/contacts/)
 
 ## Материалы
 

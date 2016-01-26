@@ -23,7 +23,7 @@
 
 ## Примеры из видео
 
- - Настройка окружения [код](/03-environment/00-packages-and-build)
+ - Настройка окружения [[код]](/03-environment/00-packages-and-build)
 
 ## Материалы
 
@@ -37,7 +37,7 @@
 
  - Документация Webpack - [ссылка](https://webpack.github.io)
  - Cкринкаст по Webpack - [ссылка](http://learn.javascript.ru/screencast/webpack)
- - Статьи о Webpack - [раз](http://frontender.info/packing-the-web-like-a-boss/), [два](https://habrahabr.ru/)post/245991/, [три](https://habrahabr.ru/company/Voximplant/blog/270593/)
+ - Статьи о Webpack - [раз](http://frontender.info/packing-the-web-like-a-boss/), [два](https://habrahabr.ru/post/245991/), [три](https://habrahabr.ru/company/Voximplant/blog/270593/)
 
 Cсылки:
  - Сайт nodejs - https://nodejs.org
