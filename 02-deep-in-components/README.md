@@ -229,9 +229,9 @@ ReactDOM.render(
 
 ## Примеры из видео
 
- - [Демонстрация жизненного цикла компонента](/02-deep-in-components/01-lifecycle-demo)
- - [Таймер](/02-deep-in-components/02-timer)
- - [Заметки](/02-deep-in-components/03-notes-app)
+ - Демонстрация жизненного цикла компонента [код](/02-deep-in-components/01-lifecycle-demo) [демо](http://krambertech.github.io/react-essential-course/lifecycle/)
+ - Таймер [код](/02-deep-in-components/02-timer)
+ - Заметки [код](/02-deep-in-components/03-notes-app) [демо](http://krambertech.github.io/react-essential-course/notes/)
 
 ## Материалы
 
