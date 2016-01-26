@@ -5,6 +5,7 @@ ITVDN - Information Technology Video Developer Network
 
  - [УРОК 1: Введение в React](/01-introduction-to-react)
  - [УРОК 2: Подробнее о компонентах](/02-deep-in-components)
+ - [УРОК 3: Настройка окружения, подключение внешних библиотек и сборка](/03-environment)
 
 ## Материалы
 
@@ -31,12 +32,16 @@ ITVDN - Information Technology Video Developer Network
  - ```Jquery Snippet Pack``` - набор сниппетов для jQuery
  - ```babel``` – Подсветка для ES6, подсветка JSX
  - ```babel-snippet``` - сниппеты для React
- 
+
 Также можно использовать [Atom](https://atom.io/), [WebStorm](https://www.jetbrains.com/webstorm/), [Nuclide](http://nuclide.io/), [Visual Studio](https://www.visualstudio.com/) или другие.
 
 #### Как писать код?
 
 Очень советую ознакомиться с [Javascript style quide](https://github.com/airbnb/javascript).
+
+#### Есть вопросы?
+
+Создавайте issue с вопросом
 
 #### Нашли ошибку или опечатку?
 
