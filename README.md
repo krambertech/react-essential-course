@@ -42,7 +42,7 @@ ITVDN - Information Technology Video Developer Network
 
 #### Есть вопросы?
 
-Создавайте issue с вопросом
+[Пишите сюда](https://github.com/krambertech/react-essential-course/issues/new)
 
 #### Нашли ошибку или опечатку?
 
