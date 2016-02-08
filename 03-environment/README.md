@@ -1,4 +1,6 @@
-# Урок 3 - Окружение [ work in progress ]
+# Урок 3 - Окружение
+
+[мини-тест по содержанию урока (5 минут)](http://itsquiz.com/activations/56b1b805ee2dac082ca1e3b4?ref=reactjs-essential)
 
 ## Резюме
 
@@ -34,6 +36,7 @@
  - Статьи о Webpack - [раз](http://frontender.info/packing-the-web-like-a-boss/), [два](https://habrahabr.ru/post/245991/), [три](https://habrahabr.ru/company/Voximplant/blog/270593/)
 
 Cсылки:
+
  - Сайт nodejs - https://nodejs.org
  - NPM - https://www.npmjs.com
  - Документация NPM - https://docs.npmjs.com/
