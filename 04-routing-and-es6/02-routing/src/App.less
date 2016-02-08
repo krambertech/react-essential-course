@@ -1,0 +1,43 @@
+@import "styles/palette.less";
+
+// global styles
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+// app styles
+.App {
+    background-color: @card-background-color;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    .menu-bar {
+        display: flex;
+        background-color: @primary-color;
+        height: 50px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        box-sizing: border-box;
+    }
+
+    .menu-item {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .menu-item-link {
+        font-size: 17px;
+        color: @contrast-text-color;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .content {
+        height: 100%;
+    }
+}
