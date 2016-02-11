@@ -2,6 +2,12 @@
 
 [мини-тест по содержанию урока (5 минут)](http://itsquiz.com/activations/566ac6e85b9820bd691fe40f?ref=reactjs-essential)
 
+## Примеры из видео
+
+ - Демонстрация жизненного цикла компонента [[код]](/02-deep-in-components/01-lifecycle-demo) [[demo]](http://krambertech.github.io/react-essential-course/lifecycle/)
+ - Таймер [[код]](/02-deep-in-components/02-timer)
+ - Заметки [[код]](/02-deep-in-components/03-notes-app) [[demo]](http://krambertech.github.io/react-essential-course/notes/)
+
 ## Резюме
 
 В предыдущем уроке мы научились писать несложные компоненты на React, использовать ```props``` и ```state``` компонентов, обрабатывать события и компоновать компоненты на странице. В данном уроке мы узнаем еще больше о компонентах, изучим их жизненный цикл, научимся использовать ```refs```, работать с дочерними компонентами и DOM.
@@ -226,12 +232,6 @@ ReactDOM.render(
  - Чем отличается определение inline стилей для компонента в React от их использования в html? Как передать inline стили  в компонент?
  - Зачем для событий используется ```bind```? Когда его следует использовать?
  - Если вы на 1000 компонентов повесите 1000 событий, значит ли это, что будет в действительности объявлено 1000 событий? Почему?
-
-## Примеры из видео
-
- - Демонстрация жизненного цикла компонента [[код]](/02-deep-in-components/01-lifecycle-demo) [[demo]](http://krambertech.github.io/react-essential-course/lifecycle/)
- - Таймер [[код]](/02-deep-in-components/02-timer)
- - Заметки [[код]](/02-deep-in-components/03-notes-app) [[demo]](http://krambertech.github.io/react-essential-course/notes/)
 
 ## Материалы
 
