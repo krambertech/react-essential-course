@@ -1,0 +1,56 @@
+@import "../styles/palette.less";
+@import "../styles/media.less";
+
+.Task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid @divider-color;
+
+    &.editing {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.Task__text {
+    width: 100%;
+    min-height: 20px;
+}
+
+.Task__due {
+    width: 100%;
+    color: @secondary-text-color;
+    font-size: 13px;
+}
+
+.Task__toolbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    > * {
+        margin-right: 6px;
+    }
+}
+
+.Task__input {
+    font-size: 16px;
+    margin: 8px 16px;
+    padding: 6px;
+    width: 100%;
+    border: 1px solid @divider-color;
+
+    &:focus {
+        outline: 0;
+        border: 1px solid @primary-color;
+    }
+}
+
+.Task__checkbox {
+    max-width: 40px;
+}

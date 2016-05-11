@@ -1,4 +1,4 @@
-# Урок 4 - ES2015, роутинг, CSS препроцессоры, PropTypes, контекст
+# Урок 5 - ES2015, роутинг, CSS препроцессоры, PropTypes, контекст
 
 ## Резюме
 
@@ -18,7 +18,7 @@
 ## Примеры из видео
 
  - Примеры на ES2015 [[код]](/04-routing-and-es6/01-es6)
- - Приложение для отображения сообщений (react-router) [[код]](/04-routing-and-es6/02-routing) [[demo]](/04-routing-and-es6/01-es6)
+ - Приложение для отображения сообщений (react-router) [[код]](/04-routing-and-es6/02-routing) [[demo]](/04-routing-and-es6/sdsd)
  - Использование PropTypes [[код]](/04-routing-and-es6/03-proptypes)
  - Использование контеста [[код]](/04-routing-and-es6/04-context)
 

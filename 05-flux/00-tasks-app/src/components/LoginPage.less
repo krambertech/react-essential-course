@@ -1,0 +1,29 @@
+@import "../styles/palette.less";
+@import "../styles/media.less";
+
+.LoginPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: @primary-color;
+    display: flex;
+    color: #fff;
+}
+
+.LoginPage__banner {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media @phone {
+        flex-direction: column;
+    }
+}
+
+.LoginPage__text {
+    padding: 24px;
+}
+
+.LoginPage__image {
+    max-width: 50%;
+}
