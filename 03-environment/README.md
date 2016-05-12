@@ -61,3 +61,4 @@ _Уровень сложности: высокий_
 
 Напишите приложение для учета расходов с использованием внешней UI библиотеки (React Bootstrap, Material UI, React Mdl, Elemental UI, Belle). Есть таблица с расходами, в нее можно добавлять доход (income) и расходы (outcome).
 
+**Если есть вопросы [пишите сюда](https://github.com/krambertech/react-essential-course/issues/new)**

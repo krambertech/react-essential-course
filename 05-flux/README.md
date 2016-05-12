@@ -1,73 +1,75 @@
-# Урок 5 - ES2015, роутинг, CSS препроцессоры, PropTypes, контекст
+# Урок 5 - Взаимодействие с API и Flux
 
 ## Резюме
 
-Описание урока
+
 
 ## Вопросы к самопроверке
 
- - Чем отличается объявление переменных с помощью let от var?
- - Чем arrow-фунции отличаются от обыкновенных функций?
- - Какие возможности предоставляют CSS репроцессоры?
- - Как объявить переменую в LESS?
- - Что такое и какие функции выполняю миксины (примеси) в LESS?
- - Для чего нужен роутер в веб-приложении?
- - Зачем нужно валидировать свойства компонентов?
- - Как использовать контекст в React? Когда его следует использовать?
+ - Что такое архитектура Flux?
+ - Как происходит взаимодействие с данными во Flux?
+ - Для чего нужны константы в Flux?
+ - За что отвечает Dispatcher?
 
 ## Примеры из видео
 
  - Примеры на ES2015 [[код]](/04-routing-and-es6/01-es6)
- - Приложение для отображения сообщений (react-router) [[код]](/04-routing-and-es6/02-routing) [[demo]](/04-routing-and-es6/sdsd)
- - Использование PropTypes [[код]](/04-routing-and-es6/03-proptypes)
- - Использование контеста [[код]](/04-routing-and-es6/04-context)
 
 ## Материалы
 
-**ES2015**
+**Flux**
 
- - [javascript.ru](https://learn.javascript.ru/es-modern-usage)
- - [BabelJS](https://babeljs.io/docs/learn-es2015/)
- - Бесплатная [книга](http://exploringjs.com/) о ES2015 (на английском)
- - Еще одна [книга](https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond) о ES6
+ - [Oфициальный сайт](https://facebook.github.io/flux/)
 
-Роутинг
+Google API
 
- - React Router - [документация](https://github.com/rackt/react-router) [примеры](https://github.com/rackt/react-router/tree/master/examples)
- - Выступление Майкла Джексона на React.js Conf 2015 - [react-router increases your productivity](https://www.youtube.com/watch?v=XZfvW1a8Xac)
+ - https://console.developers.google.com/iam-admin/projects
+ - https://developers.google.com/google-apps/tasks/v1/reference
 
-CSS препроцессоры
+Дополнительно
 
- - Документация less [http://lesscss.org/](http://lesscss.org/)
- - [LESS для новичков по-русски](https://www.gitbook.com/book/mrmlnc/less-guidebook-for-beginners/details)
-
-Flexbox:
-
- - http://frontender.info/a-guide-to-flexbox/
- - https://habrahabr.ru/post/242545/
-
-PropTypes: https://facebook.github.io/react/docs/reusable-components.html
-
-Context: https://facebook.github.io/react/docs/context.html
+ - [Библиотека material-ui](http://material-ui.com)
 
 ## Домашнее задание
 
-Задание 1 : В приложении с заметками определить propTypes
-Уровень сложности: низкий
-На предыдущем уроке мы писали приложение с заметками. Переписать его на ES2015 и для всех компонентов описать propTypes
+**Задание 1 : Удаление задач**
 
-Задание 2 : Отображение статей
-Уровень сложности: средний
-Задается articles.json файл в котором хранится массив объектов, которые соответствуют статьям. Написать приложение для отображения статей из этого файла. Должно быть две страницы: `/articles` (просто список всех статей) и `/article/:id` (страница со статьей.
+_Уровень сложности: низкий_
 
-Задание 3 : Маленький интернет-магазин
-Уровень сложности: высокий
-Напишите маленький интернет магазин, в котором есть такие страницы:
+Нужно реализовать удаление задач из списка (по клику в меню) и при редактировании. Для этого нужно создать методы для API, константы, экшены и обработчики в сторах.
 
- - Главная страница (/home) на которой отображается информация о магазине.
- - Страница со писком товаров и поиском по нему (/goods).
- - Страница с описанием конкретного товара (/goods/:id).
- - Корзина (/cart)
+Документация: https://developers.google.com/google-apps/tasks/v1/reference/tasks/delete
 
-Кадлый из товаров должна быть возможность положить в корзину.
+**Задание 2 : Выделение выбранного списка задач**
 
+_Уровень сложности: низкий_
+
+В меню слева должен подсвечиваться выбранный список. Почитайте в документации react-router о том, как можно это сделать.
+
+**Задание 3 : Отображение названия выбранного списка**
+_Уровень сложности: средний_
+Вверху списка задач должно отображаться название открытого списка.
+
+Документация: https://developers.google.com/google-apps/tasks/v1/reference/tasklists/get
+
+**Задание 4 : Срок и описание задач**
+
+_Уровень сложности: высокий_
+
+При создании (и, соответственно, редактировании) задач должна быть возможность добавить к ним описание и срок выполнения. Используйте компоненты material-ui. Также подумайте, как это лучше отобразить в приложении при просмотре списка.
+
+Создание задачи: https://developers.google.com/google-apps/tasks/v1/reference/tasks/insert
+Изменение задачи: https://developers.google.com/google-apps/tasks/v1/reference/tasks/update
+Компонент для выбора даты: http://www.material-ui.com/v0.14.4/#/components/date-picker
+
+**Задание 5 : Редактирование и удаление списков**
+
+_Уровень сложности : высокий_
+
+При открытии списка вверху (рядом с кнопкой для добавления задачи) должны быти кнопки для редактирования и удаления открытого списка. Предусмотрите обновления информации в списке в приложение, после ее изменения. Также добавьте диалог с предупреждением при удалении списка.
+
+Изменение списка: https://developers.google.com/google-apps/tasks/v1/reference/tasklists/update
+
+Удаление списка: https://developers.google.com/google-apps/tasks/v1/reference/tasklists/delete
+
+**Если есть вопросы [пишите сюда](https://github.com/krambertech/react-essential-course/issues/new)**

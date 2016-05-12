@@ -288,3 +288,4 @@ _Уровень сложности: высокий_
 
 [подсказка](02-deep-in-components/homework/04.md)
 
+**Если есть вопросы [пишите сюда](https://github.com/krambertech/react-essential-course/issues/new)**
