@@ -2,6 +2,12 @@
 
 [мини-тест по содержанию урока (5 минут)](http://itsquiz.com/activations/566533792ba96aaf3c016c34?ref=reactjs-essential)
 
+## Примеры из видео
+
+ - Hello World [[код]](/01-introduction-to-react/00-template/index.html)
+ - Используем параметры [[код]](/01-introduction-to-react/01-using-props/index.html)
+ - Поиск по списку контактов [[код]](/01-introduction-to-react/02-contacts-search/index.html) [[demo]](http://krambertech.github.io/react-essential-course/contacts/)
+
 ## Резюме
 
 #### Что такое React?
@@ -197,12 +203,6 @@ var EventComponent = React.createClass({
  - Как определить первоначальное состояние компонента?
  - Зачем нужен key в React?
  - Мини тест по материалу : http://itsquiz.com/ru/activations/566533792ba96aaf3c016c34
-
-## Примеры из видео
-
- - Hello World [[код]](/01-introduction-to-react/00-template/index.html)
- - Используем параметры [[код]](/01-introduction-to-react/01-using-props/index.html)
- - Поиск по списку контактов [[код]](/01-introduction-to-react/02-contacts-search/index.html) [[demo]](http://krambertech.github.io/react-essential-course/contacts/)
 
 ## Материалы
 
