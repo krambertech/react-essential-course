@@ -13,7 +13,7 @@
 
 ## Примеры из видео
 
- - Примеры на ES2015 [[код]](/04-routing-and-es6/01-es6)
+ - Almost google tasks [[код]](/05-flux/00-tasks-app)
 
 ## Материалы
 
