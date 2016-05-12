@@ -59,7 +59,9 @@ _Уровень сложности: высокий_
 При создании (и, соответственно, редактировании) задач должна быть возможность добавить к ним описание и срок выполнения. Используйте компоненты material-ui. Также подумайте, как это лучше отобразить в приложении при просмотре списка.
 
 Создание задачи: https://developers.google.com/google-apps/tasks/v1/reference/tasks/insert
+
 Изменение задачи: https://developers.google.com/google-apps/tasks/v1/reference/tasks/update
+
 Компонент для выбора даты: http://www.material-ui.com/v0.14.4/#/components/date-picker
 
 **Задание 5 : Редактирование и удаление списков**
