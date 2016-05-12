@@ -1,4 +1,5 @@
 # Курс React Essential
+
 ITVDN - Information Technology Video Developer Network
 
 ## Содержание
@@ -7,7 +8,7 @@ ITVDN - Information Technology Video Developer Network
 #### [УРОК 2: Подробнее о компонентах](/02-deep-in-components)
 #### [УРОК 3: Настройка окружения, подключение внешних библиотек и сборка](/03-environment)
 #### [УРОК 4: ES2015, роутинг, CSS препроцессоры, PropTypes, контекст](/04-routing-and-es6)
-#### [УРОК 5: Работа с внешним API и архитектура Flux (в разработке...)]()
+#### [УРОК 5: Работа с внешним API и архитектура Flux](/05-flux)
 #### [УРОК 6: Написание полноценного SPA (в разработке...)]()
 
 ## Материалы
