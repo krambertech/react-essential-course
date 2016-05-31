@@ -21,9 +21,29 @@ ITVDN - Information Technology Video Developer Network
 
 #### Где писать код?
 
-Вы можете выбрать любой текстовый редактор или IDE на ваш вкус. Я использую Sublime text 3. Скачать его можно [тут](http://www.sublimetext.com/3), есть версия для Windows, OS X и Ubuntu.
+Вы можете выбрать любой текстовый редактор или IDE на ваш вкус. 
 
-Список полезных плагинов:
+Я сейчас использую [Atom](https://atom.io/), он бесплатный и классный :) 
+
+Вот мои любимые плагины для Atom:
+
+ - [atom-alignment](https://atom.io/packages/atom-alignment)
+ - [autocomplete-modules](https://atom.io/packages/autocomplete-modules)
+ - [file-icons](https://atom.io/packages/file-icons)
+ - [highlight-selected](https://atom.io/packages/highlight-selected)
+ - [language-babel](https://atom.io/packages/language-babel)
+ - [linter](https://atom.io/packages/linter)
+ - [linter-eslint](https://atom.io/packages/linter-eslint)
+ - [merge-conflicts](https://atom.io/packages/merge-conflicts)
+ - [react](https://atom.io/packages/react)
+ - [pigments](https://atom.io/packages/pigments) и [https://atom.io/packages/minimap-pigments](https://atom.io/packages/minimap-pigments)
+ - [minimap](https://atom.io/packages/minimap)
+
+
+Если вы используете Sublime, скачать его можно [тут](http://www.sublimetext.com/3), есть версия для Windows, OS X и Ubuntu.
+
+Список полезных плагинов для Sublime:
+
  - ```PackageControl``` - менеджер плагинов [как установить](https://packagecontrol.io/installation)
  - ```Emmet``` - [набор сниппетов](https://packagecontrol.io/packages/Emmet)
  - ```SideBarEnhancements``` - значительно улучшает боковую панель (New File, New Folder, Duplicate, Copy, Move и тд)
@@ -37,7 +57,7 @@ ITVDN - Information Technology Video Developer Network
  - ```babel``` – Подсветка для ES6, подсветка JSX
  - ```babel-snippets``` - сниппеты для React
 
-Также можно использовать [Atom](https://atom.io/), [WebStorm](https://www.jetbrains.com/webstorm/), [Nuclide](http://nuclide.io/), [Visual Studio](https://www.visualstudio.com/) или другие.
+Также можно использовать [WebStorm](https://www.jetbrains.com/webstorm/), [Nuclide](http://nuclide.io/), [Visual Studio](https://www.visualstudio.com/) или другие.
 
 #### Как писать код?
 
