@@ -36,7 +36,7 @@ ITVDN - Information Technology Video Developer Network
  - [linter-eslint](https://atom.io/packages/linter-eslint)
  - [merge-conflicts](https://atom.io/packages/merge-conflicts)
  - [react](https://atom.io/packages/react)
- - [pigments](https://atom.io/packages/pigments) и [https://atom.io/packages/minimap-pigments](https://atom.io/packages/minimap-pigments)
+ - [pigments](https://atom.io/packages/pigments) и [minimap-pigments](https://atom.io/packages/minimap-pigments)
  - [minimap](https://atom.io/packages/minimap)
 
 
