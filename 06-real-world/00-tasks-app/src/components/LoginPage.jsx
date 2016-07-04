@@ -19,7 +19,7 @@ const LoginPage = React.createClass({
                         />
                     </div>
                     <img
-                        src='/img/desk.png'
+                        src='img/desk.png'
                         className='LoginPage__image'
                     />
                 </div>
