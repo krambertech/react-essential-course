@@ -1,4 +1,5 @@
-const CLIENT_ID = '732588629667-78die8b0im10dkg91o48bo7knds74r92.apps.googleusercontent.com';
+import { clientId } from '../config';
+
 const SCOPES = ['https://www.googleapis.com/auth/tasks', 'https://www.googleapis.com/auth/plus.me'];
 
 export default {
@@ -6,7 +7,7 @@ export default {
         return new Promise((resolve, reject) => {
             gapi.auth.authorize(
                 {
-                    'client_id': CLIENT_ID,
+                    'client_id': clientId,
                     'scope': SCOPES,
                     'immediate': params.immediate,
                     'cookie_policy': 'single_host_origin'
@@ -25,9 +26,7 @@ export default {
     listTaskLists() {
         const request = gapi.client.tasks.tasklists.list();
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     showTaskList(taskListId) {
@@ -35,9 +34,7 @@ export default {
             tasklist: taskListId
         });
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     insertTaskList({ title }) {
@@ -45,9 +42,7 @@ export default {
             title: title
         });
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     updateTaskList({ taskListId, title }) {
@@ -57,9 +52,7 @@ export default {
             title: title
         });
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     deleteTaskList({ taskListId }) {
@@ -67,9 +60,7 @@ export default {
             tasklist: taskListId
         });
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     listTasks(taskListId) {
@@ -77,9 +68,7 @@ export default {
             tasklist: taskListId
         });
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     insertTask({ taskListId, ...params }) {
@@ -88,9 +77,7 @@ export default {
             ...params
         });
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     updateTask({ taskListId, taskId, ...params }) {
@@ -101,9 +88,7 @@ export default {
             ...params
         });
 
-        return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
-        });
+        return this.makeRequest(request);
     },
 
     deleteTask({ taskListId, taskId }) {
@@ -113,8 +98,16 @@ export default {
             id       : taskId
         });
 
+        return this.makeRequest(request);
+    },
+
+    makeRequest(requestObj) {
         return new Promise((resolve, reject) => {
-            request.execute(resp => resolve(resp));
+            requestObj.execute(resp =>
+                resp.error
+                ? reject(resp.error)
+                : resolve(resp.result)
+            );
         });
     }
 }

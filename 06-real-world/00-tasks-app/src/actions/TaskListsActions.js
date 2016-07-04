@@ -25,7 +25,7 @@ const TaskListsActions = {
         .then(data => {
             AppDispatcher.dispatch({
                 type: AppConstants.TASK_LIST_LOAD_SUCCESS,
-                taskList: data.result
+                taskList: data
             });
         })
         .catch(err => {
@@ -58,7 +58,7 @@ const TaskListsActions = {
             AppDispatcher.dispatch({
                 type       : AppConstants.TASK_LIST_UPDATE_SUCCESS,
                 taskListId : params.taskListId,
-                taskList   : data.result
+                taskList   : data
             });
         })
         .catch(err => {

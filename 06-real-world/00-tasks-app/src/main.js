@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, Redirect, hashHistory } from 'react-router';
 
 import SessionActions from './actions/SessionActions';
 import SessionStore from './stores/SessionStore';
@@ -8,9 +8,10 @@ import SessionStore from './stores/SessionStore';
 import App from './App.jsx';
 import LoggedInLayout from './components/LoggedInLayout.jsx';
 import AboutPage from './components/AboutPage.jsx';
-import LoginPage from './components/LoginPage.jsx';
-import TasklistsPage from './components/TasklistsPage.jsx';
-import TasksPage from './components/TasksPage.jsx';
+
+import TasklistsPage from './containers/TasklistsPage.jsx';
+import TasksPage from './containers/TasksPage.jsx';
+import LoginPage from './containers/LoginPage.jsx';
 
 window.handleGoogleApiLoaded = () => {
     SessionActions.authorize(true, renderApp);
@@ -19,6 +20,7 @@ window.handleGoogleApiLoaded = () => {
 function renderApp() {
     ReactDOM.render(
         <Router history={hashHistory}>
+            <Redirect from='/' to='/login' />
             <Route path='/' component={App}>
                 <Route path='/login' component={LoginPage} />
                 <Route component={LoggedInLayout} onEnter={requireAuth}>
