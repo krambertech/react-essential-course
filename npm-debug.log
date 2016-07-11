@@ -2,7 +2,7 @@
 1 verbose cli [ '/usr/local/Cellar/node/5.1.0/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'devserver' ]
+1 verbose cli   'build' ]
 2 info using npm@3.3.12
 3 info using node@v5.1.0
 4 verbose config Skipping project config: /Users/katerynaporshnieva/.npmrc. (matches userconfig)
@@ -10,7 +10,7 @@
 5 verbose stack     at Error (native)
 6 verbose cwd /Users/katerynaporshnieva/Projects/itvdn/react-essential-course
 7 error Darwin 15.5.0
-8 error argv "/usr/local/Cellar/node/5.1.0/bin/node" "/usr/local/bin/npm" "run" "devserver"
+8 error argv "/usr/local/Cellar/node/5.1.0/bin/node" "/usr/local/bin/npm" "run" "build"
 9 error node v5.1.0
 10 error npm  v3.3.12
 11 error path /Users/katerynaporshnieva/package.json
