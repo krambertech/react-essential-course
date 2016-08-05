@@ -19,9 +19,11 @@ ITVDN - Information Technology Video Developer Network
 
 ## FAQ
 
-#### Где писать код?
+### Где писать код?
 
 Вы можете выбрать любой текстовый редактор или IDE на ваш вкус. 
+
+**Atom ♥️**
 
 Я сейчас использую [Atom](https://atom.io/), он бесплатный и классный :) 
 
@@ -39,6 +41,9 @@ ITVDN - Information Technology Video Developer Network
  - [pigments](https://atom.io/packages/pigments) и [minimap-pigments](https://atom.io/packages/minimap-pigments)
  - [minimap](https://atom.io/packages/minimap)
 
+Еще полезные плагины можно посмотреть [тут](https://github.com/krambertech/react-essential-course/issues/15)
+
+**Sublime Text 2**
 
 Если вы используете Sublime, скачать его можно [тут](http://www.sublimetext.com/3), есть версия для Windows, OS X и Ubuntu.
 
@@ -57,16 +62,18 @@ ITVDN - Information Technology Video Developer Network
  - ```babel``` – Подсветка для ES6, подсветка JSX
  - ```babel-snippets``` - сниппеты для React
 
+**Еще**
+
 Также можно использовать [WebStorm](https://www.jetbrains.com/webstorm/), [Nuclide](http://nuclide.io/), [Visual Studio](https://www.visualstudio.com/) или другие.
 
-#### Как писать код?
+### Как писать код?
 
 Очень советую ознакомиться с [Javascript style quide](https://github.com/airbnb/javascript).
 
-#### Есть вопросы?
+### Есть вопросы?
 
 [Пишите сюда](https://github.com/krambertech/react-essential-course/issues/new)
 
-#### Нашли ошибку или опечатку?
+### Нашли ошибку или опечатку?
 
 Исправляйте и создавайте pull-request :)
