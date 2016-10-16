@@ -2,7 +2,7 @@
 
 ITVDN - Information Technology Video Developer Network
 
-## 🎉🎉🎉  [6-недельный онлайн-курс по React.js](http://frontend-science.com/react/)  🎉🎉🎉
+## 🎉🎉🎉  [8-недельный онлайн-курс по React.js](http://frontend-science.com/react/)  🎉🎉🎉
 
 ## Содержание
 
