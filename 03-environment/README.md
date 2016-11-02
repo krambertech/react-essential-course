@@ -1,4 +1,4 @@
-# Урок 3 - Окружение
+# Урок 3 — Окружение
 
 [мини-тест по содержанию урока (5 минут)](http://itsquiz.com/activations/56b1b805ee2dac082ca1e3b4?ref=reactjs-essential)
 
@@ -11,7 +11,7 @@
 
 Описание урока
 
-## Вопросы к самопроверке
+## Вопросы для самопроверки
 
  - Зачем нужно использовать менеджер пакетов?
  - Какую команду необходимо выполнить для начальной настройки проекта?
@@ -32,34 +32,34 @@
 
 Установка и использование **Webpack**
 
- - Документация Webpack - [ссылка](https://webpack.github.io)
- - Cкринкаст по Webpack - [ссылка](http://learn.javascript.ru/screencast/webpack)
- - Статьи о Webpack - [раз](http://frontender.info/packing-the-web-like-a-boss/), [два](https://habrahabr.ru/post/245991/), [три](https://habrahabr.ru/company/Voximplant/blog/270593/)
+ - Документация Webpack — [ссылка](https://webpack.github.io)
+ - Cкринкаст по Webpack — [ссылка](http://learn.javascript.ru/screencast/webpack)
+ - Статьи о Webpack — [раз](http://frontender.info/packing-the-web-like-a-boss/), [два](https://habrahabr.ru/post/245991/), [три](https://habrahabr.ru/company/Voximplant/blog/270593/)
 
 Cсылки:
 
- - Сайт nodejs - https://nodejs.org
- - NPM - https://www.npmjs.com
- - Документация NPM - https://docs.npmjs.com/
+ - Сайт nodejs — https://nodejs.org
+ - NPM — https://www.npmjs.com
+ - Документация NPM — https://docs.npmjs.com/
 
 ## Домашнее задание
 
-**Задание 1 : Переделать список контактов**
+**Задание 1: Переделать список контактов**
 
 _Уровень сложности: низкий_
 
 На первом уроке мы делали список контактов. Реализуйте его с помощью модулей и Webpack.
 
-**Задание 2 : Отображение статей**
+**Задание 2: Отображение статей**
 
 _Уровень сложности: средний_
 
 Задается articles.json файл в котором хранится массив объектов, которые соответствуют статьям. Написать приложение для отображения статей из этого файла. Также должен работать поиск по статьям.
 
-**Задание 3 : Использование внешней UI библиотеки**
+**Задание 3: Использование внешней UI библиотеки**
 
 _Уровень сложности: высокий_
 
-Напишите приложение для учета расходов с использованием внешней UI библиотеки (React Bootstrap, Material UI, React Mdl, Elemental UI, Belle). Есть таблица с расходами, в нее можно добавлять доход (income) и расходы (outcome).
+Напишите приложение для учета расходов с использованием внешней UI библиотеки (React Bootstrap, Material UI, React Mdl, Elemental UI, Belle). Есть таблица с расходами, в нее можно добавлять доходы (income) и расходы (outcome).
 
 **Если есть вопросы [пишите сюда](https://github.com/krambertech/react-essential-course/issues/new)**
