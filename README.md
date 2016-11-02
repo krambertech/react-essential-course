@@ -1,6 +1,6 @@
 # Курс React Essential
 
-ITVDN - Information Technology Video Developer Network
+ITVDN — Information Technology Video Developer Network
 
 ## 🎉🎉🎉  [8-недельный онлайн-курс по React.js](http://frontend-science.com/react/)  🎉🎉🎉
 
@@ -51,18 +51,18 @@ ITVDN - Information Technology Video Developer Network
 
 Список полезных плагинов для Sublime:
 
- - ```PackageControl``` - менеджер плагинов [как установить](https://packagecontrol.io/installation)
- - ```Emmet``` - [набор сниппетов](https://packagecontrol.io/packages/Emmet)
- - ```SideBarEnhancements``` - значительно улучшает боковую панель (New File, New Folder, Duplicate, Copy, Move и тд)
- - ```SublimeCodeIntel``` - [крутой автокомлит](http://sublimecodeintel.github.io/SublimeCodeIntel/)
- - ```Alignment``` - выстраивает все курсоры в одну линию по нажатию Ctrl+Alt+A
- - ```Super Calculator``` - позволяет делать математические вычисления по ALT+C
- - ```GitGutter``` – показывает измененные строки с момента последнего коммита
- - ```AutoFileName``` - Автозаполнение путей к подключаемым файлам
- - ```ColorHighlighter``` – [подсветка цвета в CSS/LESS](https://github.com/Monnoroch/ColorHighlighter)
- - ```Jquery Snippet Pack``` - набор сниппетов для jQuery
- - ```babel``` – Подсветка для ES6, подсветка JSX
- - ```babel-snippets``` - сниппеты для React
+ - ```PackageControl``` — менеджер плагинов [как установить](https://packagecontrol.io/installation)
+ - ```Emmet``` — [набор сниппетов](https://packagecontrol.io/packages/Emmet)
+ - ```SideBarEnhancements``` — значительно улучшает боковую панель (New File, New Folder, Duplicate, Copy, Move и тд)
+ - ```SublimeCodeIntel``` — [крутой автокомлит](http://sublimecodeintel.github.io/SublimeCodeIntel/)
+ - ```Alignment``` — выстраивает все курсоры в одну линию по нажатию Ctrl+Alt+A
+ - ```Super Calculator``` — позволяет делать математические вычисления по ALT+C
+ - ```GitGutter``` — показывает измененные строки с момента последнего коммита
+ - ```AutoFileName``` — автозаполнение путей к подключаемым файлам
+ - ```ColorHighlighter``` — [подсветка цвета в CSS/LESS](https://github.com/Monnoroch/ColorHighlighter)
+ - ```Jquery Snippet Pack``` — набор сниппетов для jQuery
+ - ```babel``` — Подсветка для ES6, подсветка JSX
+ - ```babel-snippets``` — сниппеты для React
 
 **Еще**
 
