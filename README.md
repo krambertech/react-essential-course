@@ -70,7 +70,7 @@ ITVDN — Information Technology Video Developer Network
 
 ### Как писать код?
 
-Очень советую ознакомиться с [Javascript style quide](https://github.com/airbnb/javascript).
+Очень советую ознакомиться с [Javascript style guide](https://github.com/airbnb/javascript).
 
 ### Есть вопросы?
 
