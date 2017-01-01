@@ -147,7 +147,7 @@ componentDidUpdate: function(prevProps, prevState) {
 }
 ```
 
-Произведенные изменения уже отображены в DOM дереве. Обычно, в данном методе производят какие-то операции с DOM елементами согдасно изменениям.
+Произведенные изменения уже отображены в DOM дереве. Обычно, в данном методе производят какие-то операции с DOM елементами согласно изменениям.
 
 **!!!**  Не используйте ```setState()``` в этом методе! Так у вас может произойти зацикливание!
 
@@ -212,6 +212,31 @@ var divStyle = {
 ReactDOM.render(
     <div style={divStyle}>Hello World!</div>,
     mountNode
+);
+```
+#### Refs
+
+```jsx
+// для удобства работы с элементами DOM дерева в методе render(),
+// мы используем refs(ссылка на элемент DOM),
+// чтобы использовать свойства и методы полученного объекта 
+var MyComponent = React.createClass({
+    handleClick: function() {
+        this.refs.input.focus();
+    },
+    render: function() {
+        return (
+            <div>
+            <input type="text" ref="input" />
+            <button value=“Focus” onClick={this.handleClick} />
+            </div>
+        );
+    }
+});
+
+ReactDOM.render(
+    <MyComponent />,
+    document.getElementById('example')
 );
 ```
 
