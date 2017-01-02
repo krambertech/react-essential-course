@@ -222,13 +222,13 @@ ReactDOM.render(
 // чтобы использовать свойства и методы полученного объекта 
 var MyComponent = React.createClass({
     handleClick: function() {
-        this.refs.input.focus();
+        this.input.focus();
     },
     render: function() {
         return (
             <div>
-            <input type="text" ref="input" />
-            <button value=“Focus” onClick={this.handleClick} />
+                <input type="text" ref={ (input) => { this.input = input } } />
+                <input type="button" value="Focus" onClick={this.handleClick} />
             </div>
         );
     }
