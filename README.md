@@ -2,8 +2,6 @@
 
 ITVDN — Information Technology Video Developer Network
 
-## 🎉🎉🎉  [8-недельный онлайн-курс по React.js](http://goo.gl/h0bMKF)  🎉🎉🎉
-
 ## Содержание
 
 #### [УРОК 1: Введение в React](/01-introduction-to-react)
