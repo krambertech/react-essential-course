@@ -29,7 +29,7 @@ AppDispatcher.register(action => {
     console.info(action.type, action);
 
     switch(action.type) {
-        case AppConstants.SESSION_AUTHORIZE_SUCS: {
+        case AppConstants.SESSION_AUTHORIZE_SUCCESS: {
             _isLoggedIn = true;
 
             SessionStore.emitChange();
