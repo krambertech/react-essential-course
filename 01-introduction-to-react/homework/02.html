@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW: 02</title>
+    <script src="../../../src/js/react.js"></script>
+    <script src="../../../src/js/react-dom.js"></script>
+    <script src="../../../src/js/browser.js"></script>
+</head>
+<body>
+    <div id='content'></div>
+
+    <script type="text/babel">
+        var HelloWorld = React.createClass({
+
+            getInitialState: function() {
+                return {
+                    name: 'stranger'
+                };
+            },
+
+            handleNameChange : function(event) {
+                var query = event.target.value;
+                this.setState({
+                    name: (query.length) ? query : 'stranger'
+                });
+            },
+
+            render: function() {
+                return (
+                    <div>
+                        <input type="text" onChange={this.handleNameChange} />
+                        <h3>Hello {this.state.name}!</h3>
+                    </div>
+                )
+            }
+        });
+
+        ReactDOM.render(
+            <HelloWorld />,
+            document.getElementById('content')
+        );
+    </script>
+</body>
+</html>
