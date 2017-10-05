@@ -1,19 +1,17 @@
-var Note = React.createClass(
-    {
-        render: function() {
-            var noteStyle = {
-                backgroundColor: this.props.color
-            };
+var Note = React.createClass({
+    render: function () {
+        var noteStyle = {
+            backgroundColor: this.props.color
+        };
 
-            return (
-                <div className="note" style={noteStyle}>
-                    {this.props.children}
-                    <span className="delete-note" onClick={this.props.onDelete}> x </span>
-                </div>
-            );
-        }
+        return (
+            <div className="note" style={noteStyle}>
+                {this.props.children}
+                <span className="delete-note" onClick={this.props.onDelete}> x </span>
+            </div>
+        );
     }
-);
+});
 
 var NoteEditor = React.createClass({
     getInitialState: function() {
@@ -243,8 +241,6 @@ var NotesApp = React.createClass({
             notes: newNotes
         });
     },
-
-
 
     handleNoteSearch: function(event) {
         this.setState({
