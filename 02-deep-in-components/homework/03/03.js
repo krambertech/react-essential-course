@@ -212,17 +212,25 @@ var NotesApp = React.createClass({
     },
 
     componentDidUpdate: function() {
-        // this._updateLocalStorage();
+        if(!this.state.searchQuery.length) {
+          this._updateLocalStorage();
+        }
     },
 
     handleNoteAdd: function(newNote) {
-        var newNotes = this.state.notes.slice();
-        newNotes.unshift(newNote);
-        this.setState({
-            notes: newNotes
-        });
+        var newNotes;
+        if(this.state.searchQuery.length) {
+          newNotes = JSON.parse(localStorage.getItem('notes'));
+        } else {
+          newNotes = this.state.notes.slice();
+        }
 
-        this._updateLocalStorage();
+        newNotes.unshift(newNote);
+
+        this.setState({
+            notes: newNotes,
+            searchQuery: ''
+        });
     },
 
     handleNoteDelete: function(note) {
@@ -234,8 +242,6 @@ var NotesApp = React.createClass({
         this.setState({
             notes: newNotes
         });
-
-        this._updateLocalStorage();
     },
 
 
