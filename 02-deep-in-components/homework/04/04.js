@@ -1,3 +1,70 @@
+var TodoFilter = React.createClass({
+    render: function() {
+        return (
+            <div className="todo-filter">
+                <div className={`todo-filter__item ${(this.props.status == 'all') ? 'active' : ''}`}
+                     onClick={this.props.onFilter.bind(null, 'all')}
+                >All</div>
+                <div className={`todo-filter__item ${(this.props.status == 'new') ? 'active' : ''}`}
+                     onClick={this.props.onFilter.bind(null, 'new')}
+                >New</div>
+                <div className={`todo-filter__item ${(this.props.status == 'completed') ? 'active' : ''}`}
+                     onClick={this.props.onFilter.bind(null, 'completed')}
+                >Completed</div>
+            </div>
+        );
+    }
+});
+
+var TodoTask = React.createClass({
+    render: function() {
+        return (
+            <div className="todo-task">
+                <label className="todo-task__label">
+                    <input
+                        type="checkbox"
+                        className="todo-task__checkbox"
+                        checked={(this.props.completed)?(true):(false)}
+                        onChange={this.props.onChange}
+                    />
+                    <span className="todo-task__text">
+                        {this.props.text}
+                    </span>
+                </label>
+                <button
+                    className="todo-task__button"
+                    onClick={this.props.onDelete}
+                >-</button>
+            </div>
+        );
+    }
+});
+
+var TodoList = React.createClass({
+    render: function() {
+        var onDelete = this.props.onTaskDelete;
+        var onChange = this.props.onTaskChange;
+
+        return (
+            <div className="todo-list">
+                {
+                    this.props.tasks.map(function(task) {
+                        return (
+                            <TodoTask
+                                key={task.id}
+                                text={task.text}
+                                completed={task.completed}
+                                onDelete={onDelete.bind(null, task)}
+                                onChange={onChange.bind(null, task)}
+                            />
+                        );
+                    })
+                }
+            </div>
+        );
+    }
+});
+
 var TodoApp = React.createClass({
     getInitialState: function() {
         return {
@@ -57,17 +124,7 @@ var TodoApp = React.createClass({
 
     handleFilter: function(status) {
         if(status !== this.state.status) {
-            var localTasks = JSON.parse(localStorage.getItem('tasks'));
-            var newTasks = localTasks.filter(function(item) {
-                if(status === 'all') {
-                    return true;
-                } else {
-                    return item.completed === (status === 'completed');
-                }
-            });
-
             this.setState({
-                tasks: newTasks,
                 status: status
             });
         }
@@ -78,13 +135,27 @@ var TodoApp = React.createClass({
         localStorage.setItem('tasks', tasks);
     },
 
+    _getVisibleTasks: function(tasks, status) {
+        if(status === 'new') {
+            return tasks.filter(function(task) {
+                return (task.completed === false);
+            });
+        } else if(status === 'completed') {
+            return tasks.filter(function(task) {
+                return (task.completed === true);
+            });
+        } else {
+            return tasks;
+        }
+    },
+
     render: function() {
         return (
             <div className="todo-app">
                 <h2 className="todo-app__header">TodoApp</h2>
                 <TodoEditor onTaskAdd={this.handleTaskAdd} />
                 <TodoList
-                    tasks={this.state.tasks}
+                    tasks={this._getVisibleTasks(this.state.tasks, this.state.status)}
                     onTaskDelete={this.handleTaskDelete}
                     onTaskChange={this.handleTaskChange}
                 />
@@ -111,7 +182,7 @@ var TodoEditor = React.createClass({
     },
 
     handleKeyPress: function(event) {
-        if(event.key === 'Enter') {
+        if(event.key === 'Enter' && this.state.text.length) {
             var task = {
                 text: this.state.text,
                 completed: false,
@@ -137,73 +208,6 @@ var TodoEditor = React.createClass({
                     onChange={this.handleTextChange}
                     onKeyPress={this.handleKeyPress}
                 />
-            </div>
-        );
-    }
-});
-
-var TodoList = React.createClass({
-    render: function() {
-        var onDelete = this.props.onTaskDelete;
-        var onChange = this.props.onTaskChange;
-
-        return (
-            <div className="todo-list">
-                {
-                    this.props.tasks.map(function(task) {
-                        return (
-                            <TodoTask
-                                key={task.id}
-                                text={task.text}
-                                completed={task.completed}
-                                onDelete={onDelete.bind(null, task)}
-                                onChange={onChange.bind(null, task)}
-                            />
-                        );
-                    })
-                }
-            </div>
-        );
-    }
-});
-
-var TodoTask = React.createClass({
-    render: function() {
-        return (
-            <div className="todo-task">
-                <label className="todo-task__label">
-                    <input
-                        type="checkbox"
-                        className="todo-task__checkbox"
-                        checked={(this.props.completed)?(true):(false)}
-                        onChange={this.props.onChange}
-                    />
-                    <span className="todo-task__text">
-                        {this.props.text}
-                    </span>
-                </label>
-                <button
-                    className="todo-task__button"
-                    onClick={this.props.onDelete}
-                >-</button>
-            </div>
-        );
-    }
-});
-
-var TodoFilter = React.createClass({
-    render: function() {
-        return (
-            <div className="todo-filter">
-                <div className={`todo-filter__item ${(this.props.status == 'all') ? 'active' : ''}`}
-                     onClick={this.props.onFilter.bind(null, 'all')}
-                >All</div>
-                <div className={`todo-filter__item ${(this.props.status == 'new') ? 'active' : ''}`}
-                     onClick={this.props.onFilter.bind(null, 'new')}
-                >New</div>
-                <div className={`todo-filter__item ${(this.props.status == 'completed') ? 'active' : ''}`}
-                     onClick={this.props.onFilter.bind(null, 'completed')}
-                >Completed</div>
             </div>
         );
     }
