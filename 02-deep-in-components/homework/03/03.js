@@ -210,18 +210,11 @@ var NotesApp = React.createClass({
     },
 
     componentDidUpdate: function() {
-        if(!this.state.searchQuery.length) {
-          this._updateLocalStorage();
-        }
+        this._updateLocalStorage();
     },
 
     handleNoteAdd: function(newNote) {
-        var newNotes;
-        if(this.state.searchQuery.length) {
-          newNotes = JSON.parse(localStorage.getItem('notes'));
-        } else {
-          newNotes = this.state.notes.slice();
-        }
+        var newNotes = this.state.notes.slice();
 
         newNotes.unshift(newNote);
 
@@ -246,26 +239,18 @@ var NotesApp = React.createClass({
         this.setState({
             searchQuery: event.target.value
         });
-        var searchQuery = event.target.value.toLowerCase();
-        var localNotes = JSON.parse(localStorage.getItem('notes'));
-        var currentDisplayedNotes = localNotes.filter(function(el) {
-            var searchValue = el.text.toLowerCase();
-            console.log(searchQuery);
-            return searchValue.indexOf(searchQuery) !== -1;
-        });
-
-        this.setState({
-            notes: currentDisplayedNotes
-        });
     },
 
     render: function() {
         return (
             <div className="notes-app">
                 <h2 className="app-header">NotesApp</h2>
-                <NoteSearch onSearch={this.handleNoteSearch} value={this.state.searchQuery}/>
-                <NoteEditor onNoteAdd={this.handleNoteAdd}/>
-                <NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete} />
+                <NoteSearch value={this.state.searchQuery} onSearch={this.handleNoteSearch} />
+                <NoteEditor onNoteAdd={this.handleNoteAdd} />
+                <NotesGrid
+                    notes={this._getVisibleNotes(this.state.notes, this.state.searchQuery)}
+                    onNoteDelete={this.handleNoteDelete}
+                />
             </div>
         );
     },
@@ -273,6 +258,17 @@ var NotesApp = React.createClass({
     _updateLocalStorage: function() {
         var notes = JSON.stringify(this.state.notes);
         localStorage.setItem('notes', notes);
+    },
+
+    _getVisibleNotes: function(notes, query) {
+        if(query.length) {
+            query = query.toLowerCase();
+            return notes.filter(function(note) {
+                var searchValue = note.text.toLowerCase();
+                return searchValue.indexOf(query) !== -1;
+            });
+        }
+        return notes;
     }
 });
 
