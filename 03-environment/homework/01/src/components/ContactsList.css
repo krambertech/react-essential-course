@@ -1,0 +1,15 @@
+.contacts {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.search-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.contacts-list {
+    padding: 0;
+    width: 100%;
+}
