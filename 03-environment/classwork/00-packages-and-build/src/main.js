@@ -1,3 +1,8 @@
-const name = "Sergey";
+var ReactDOM = require('react-dom');
+var React = require('react');
+var NotesApp = require('./components/NotesApp.jsx');
 
-console.log(`Hello ${name}`);
+ReactDOM.render(
+    <NotesApp />,
+    document.getElementById('mount-point')
+);
