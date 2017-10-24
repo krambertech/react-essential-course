@@ -1,5 +1,6 @@
 var React = require('react');
 var ArticlesList = require('./ArticlesList.jsx');
+var ArticlesSearch = require('./ArticlesSearch.jsx');
 var ARTICLES = require('./articles.json');
 
 require('./ArticlesApp.css');
@@ -25,6 +26,12 @@ var ArticlesApp = React.createClass({
         }
     },
 
+    handleItemSearch: function(event) {
+        this.setState({
+            searchQuery: event.target.value
+        });
+    },
+
     _getVisibleItems: function(items, query) {
         if(query.length) {
             query = query.toLowerCase();
@@ -40,6 +47,7 @@ var ArticlesApp = React.createClass({
         return (
             <div className="articles">
                 <h2 className="articles__header">ArticlesApp</h2>
+                <ArticlesSearch value={this.state.searchQuery} onSearch={this.handleItemSearch} />
                 <ArticlesList
                     items={this._getVisibleItems(this.state.articles, this.state.searchQuery)}
                 />

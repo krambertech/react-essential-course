@@ -1,22 +1,22 @@
 {
   "1": {
-    "title": "Первая статья",
-    "description": "Описание первой статьи",
+    "title": "First article",
+    "description": "First article description",
     "id": "1"
   },
   "2": {
-    "title": "Вторая статья",
-    "description": "Описание второй статьи",
+    "title": "Second article",
+    "description": "Second article description",
     "id": "2"
   },
   "3": {
-    "title": "Третья статья",
-    "description": "Описание третьей статьи",
+    "title": "Third article",
+    "description": "Third article description",
     "id": "3"
   },
   "4": {
-    "title": "Четвертая статья",
-    "description": "Описание четвертой статьи",
+    "title": "Fourth article",
+    "description": "Fourth article description",
     "id": "4"
   }
 }
