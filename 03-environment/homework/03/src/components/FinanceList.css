@@ -1,0 +1,21 @@
+.finance__list {
+
+}
+
+.transactions {
+
+}
+
+.transactions__thead {
+
+}
+
+.transactions__tr {
+    background: white;
+}
+
+.transactions__th,
+.transactions__td {
+    text-align: left;
+    padding: 4px 8px;
+}
