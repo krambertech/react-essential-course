@@ -1,23 +1,25 @@
-var React = require('react');
+import React from 'react';
 
-require('./Contact.css');
+import './Contact.css';
 
-var Contact = React.createClass({
-
-    getInitialState: function() {
-        return {
+class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             isOpened: false
         };
-    },
 
-    handleClick: function() {
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
         this.setState({
             isOpened: !this.state.isOpened
         });
-    },
+    }
 
-    render: function() {
-        var visibilityClass = (this.state.isOpened) ? '' : 'hidden';
+    render() {
+        let visibilityClass = (this.state.isOpened) ? '' : 'hidden';
 
         return (
             <li className="contact" onClick={this.handleClick}>
@@ -31,6 +33,6 @@ var Contact = React.createClass({
             </li>
         );
     }
-});
+}
 
-module.exports = Contact;
+export default Contact;
