@@ -1,30 +1,32 @@
-var React = require('react');
-var Contact = require('./Contact.jsx');
-var CONTACTS = require('./CONTACTS.js');
+import React from 'react';
+import Contact from './Contact.jsx';
+import CONTACTS from './CONTACTS.js';
 
-require('./ContactsList.css');
+import './ContactsList.css';
 
-var ContactsList = React.createClass({
-
-    getInitialState: function() {
-        return {
+class ContactsList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             displayedContacts: CONTACTS
         };
-    },
 
-    handleSearch: function(event) {
-        var searchQuery = event.target.value.toLowerCase();
-        var currentDisplayedContacts = CONTACTS.filter(function(el) {
-            var searchValue = el.name.toLowerCase();
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
+    handleSearch(event) {
+        let searchQuery = event.target.value.toLowerCase();
+        let currentDisplayedContacts = CONTACTS.filter(function(el) {
+            let searchValue = el.name.toLowerCase();
             return searchValue.indexOf(searchQuery) !== -1;
         });
 
         this.setState({
             displayedContacts: currentDisplayedContacts
         });
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div className="contacts">
                 <input type="text" className="search-field" onChange={this.handleSearch} />
@@ -45,6 +47,6 @@ var ContactsList = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = ContactsList;
+export default ContactsList;
