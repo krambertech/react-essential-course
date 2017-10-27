@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Contact.css';
+import './Contact.less';
 
 class Contact extends React.Component {
     constructor(props) {

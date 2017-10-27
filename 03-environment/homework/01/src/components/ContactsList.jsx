@@ -2,7 +2,7 @@ import React from 'react';
 import Contact from './Contact.jsx';
 import CONTACTS from './CONTACTS.js';
 
-import './ContactsList.css';
+import './ContactsList.less';
 
 class ContactsList extends React.Component {
     constructor(props) {

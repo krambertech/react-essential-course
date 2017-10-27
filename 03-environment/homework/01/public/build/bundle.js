@@ -21835,8 +21835,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./Contact.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./Contact.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./Contact.less", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./Contact.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -21854,7 +21854,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, ".contact {\n    display: flex;\n    align-items: center;\n    font-family: sans-serif;\n    width: 100%;\n    padding: 5px;\n    border-bottom: 1px dotted grey;\n}\n\n.contact-image {\n    border-radius: 50%;\n    margin: 5px;\n}\n\n.contact-name {\n    font-size: 20px;\n    font-weight: bold;\n}\n\n.contact-number {\n    font-size: 18px;\n    color: grey;\n}\n\n.contact-email,\n.contact-address {\n    font-size: 16px;\n    color: grey;\n}\n\n.hidden {\n    display: none;\n}", ""]);
+exports.push([module.i, ".contact {\n  display: flex;\n  align-items: center;\n  font-family: sans-serif;\n  width: 100%;\n  padding: 5px;\n  border-bottom: 1px dotted grey;\n}\n.contact-image {\n  border-radius: 50%;\n  margin: 5px;\n}\n.contact-name {\n  font-size: 20px;\n  font-weight: bold;\n}\n.contact-number {\n  font-size: 18px;\n  color: grey;\n}\n.contact-email,\n.contact-address {\n  font-size: 16px;\n  color: grey;\n}\n.hidden {\n  display: none;\n}\n", ""]);
 
 // exports
 
@@ -22014,8 +22014,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./ContactsList.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./ContactsList.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./ContactsList.less", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./ContactsList.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -22033,7 +22033,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, ".contacts {\n    width: 300px;\n    margin: 0 auto;\n}\n\n.search-field {\n    width: 100%;\n    padding: 10px;\n    font-size: 16px;\n}\n\n.contacts-list {\n    padding: 0;\n    width: 100%;\n}", ""]);
+exports.push([module.i, ".contacts {\n  width: 300px;\n  margin: 0 auto;\n}\n.contacts-list {\n  padding: 0;\n  width: 100%;\n}\n.search-field {\n  width: 100%;\n  padding: 10px;\n  font-size: 16px;\n}\n", ""]);
 
 // exports
 
