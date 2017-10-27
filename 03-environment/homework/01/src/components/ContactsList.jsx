@@ -16,7 +16,7 @@ class ContactsList extends React.Component {
 
     handleSearch(event) {
         let searchQuery = event.target.value.toLowerCase();
-        let currentDisplayedContacts = CONTACTS.filter(function(el) {
+        let currentDisplayedContacts = CONTACTS.filter((el) => {
             let searchValue = el.name.toLowerCase();
             return searchValue.indexOf(searchQuery) !== -1;
         });
@@ -32,7 +32,7 @@ class ContactsList extends React.Component {
                 <input type="text" className="search-field" onChange={this.handleSearch} />
                 <ul className="contacts-list">
                     {
-                        this.state.displayedContacts.map(function(el){
+                        this.state.displayedContacts.map((el) => {
                             return <Contact
                                 key={el.id}
                                 name={el.name}
