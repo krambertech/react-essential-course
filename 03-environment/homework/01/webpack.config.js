@@ -11,12 +11,17 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: "babel",
+                loader: "babel-loader",
                 exclude: [/node_modules/, /public/]
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!autoprefixer-loader",
+                loader: "style-loader!css-loader",
+                exclude: [/node_modules/, /public/]
+            },
+            {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!less-loader!",
                 exclude: [/node_modules/, /public/]
             },
             {
@@ -37,7 +42,7 @@ module.exports = {
             },
             {
                 test: /\.jsx$/,
-                loader: "react-hot!babel",
+                loader: "babel-loader",
                 exclude: [/node_modules/, /public/]
             },
             {
