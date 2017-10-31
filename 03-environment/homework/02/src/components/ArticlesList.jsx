@@ -1,14 +1,18 @@
-var React = require('react');
-var Article = require('./Article.jsx');
+import React from 'react';
+import Article from './Article.jsx';
 
-require('./ArticlesList.css');
+import './ArticlesList.less';
 
-var ArticlesList = React.createClass({
-    render: function() {
+class ArticlesList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <div className="articles__list">
                 {
-                    this.props.items.map(function(item) {
+                    this.props.items.map((item) => {
                         return (
                             <Article
                                 key={item.id}
@@ -21,6 +25,6 @@ var ArticlesList = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = ArticlesList;
+export default ArticlesList;
