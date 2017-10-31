@@ -1,38 +1,42 @@
-var React = require('react');
-var FinanceItem = require('./FinanceItem.jsx');
+import React from 'react';
+import FinanceItem from './FinanceItem.jsx';
 
-require('./FinanceList.css');
+import './FinanceList.less';
 
-var FinanceList = React.createClass({
-    render: function() {
+class FinanceList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <div className="finance__list">
                 <table className="transactions" width="100%">
                     <thead className="transactions__thead">
-                        <tr className="transactions__tr">
-                            <th className="transactions__th">Type</th>
-                            <th className="transactions__th">Title</th>
-                            <th className="transactions__th">Sum</th>
-                        </tr>
+                    <tr className="transactions__tr">
+                        <th className="transactions__th">Type</th>
+                        <th className="transactions__th">Title</th>
+                        <th className="transactions__th">Sum</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        {
-                            this.props.items.map(function(item) {
-                                return (
-                                    <FinanceItem
-                                        key={item.id}
-                                        type={item.type}
-                                        title={item.title}
-                                        sum={item.sum}
-                                    />
-                                );
-                            })
-                        }
+                    {
+                        this.props.items.map((item) => {
+                            return (
+                                <FinanceItem
+                                    key={item.id}
+                                    type={item.type}
+                                    title={item.title}
+                                    sum={item.sum}
+                                />
+                            );
+                        })
+                    }
                     </tbody>
                 </table>
             </div>
         );
     }
-});
+}
 
-module.exports = FinanceList;
+export default FinanceList;
