@@ -1,9 +1,13 @@
-var React = require('react');
+import React from 'react';
 
-require('./ArticlesSearch.css');
+import './ArticlesSearch.less';
 
-var ArticlesSearch = React.createClass({
-    render: function() {
+class ArticlesSearch extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <div className="search">
                 <input
@@ -16,6 +20,6 @@ var ArticlesSearch = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = ArticlesSearch;
+export default ArticlesSearch;

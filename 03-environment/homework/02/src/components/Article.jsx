@@ -1,9 +1,13 @@
-var React = require('react');
+import React from 'react';
 
-require('./Article.css');
+import './Article.less';
 
-var Article = React.createClass({
-    render: function() {
+class Article extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <div className="article">
                 <h4 className="article__title">{this.props.title}</h4>
@@ -11,6 +15,6 @@ var Article = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = Article;
+export default Article;
