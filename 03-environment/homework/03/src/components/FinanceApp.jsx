@@ -1,60 +1,59 @@
-var React = require('react');
-var FinanceList = require('./FinanceList.jsx');
-var FinanceEditor = require('./FinanceEditor.jsx');
+import React from 'react';
+import FinanceList from './FinanceList.jsx';
+import FinanceEditor from './FinanceEditor.jsx';
 
-require('./FinanceApp.css');
+import './FinanceApp.less';
 
-var FinanceApp = React.createClass({
-    getInitialState: function() {
-        return {
+class FinanceApp extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
             items: [],
             type: ''
         };
-    },
 
-    componentDidMount: function() {
-        var items = JSON.parse(localStorage.getItem('transactions'));
+        this.handleItemAdd = this.handleItemAdd.bind(this);
+    }
+
+    componentDidMount() {
+        let items = JSON.parse(localStorage.getItem('transactions'));
         if(items) {
             this.setState({
                 items: items
             });
         }
-    },
+    }
 
-    componentDidUpdate: function() {
+    componentDidUpdate() {
         this._updateLocalStorage();
-    },
+    }
 
-    handleItemAdd: function(newItem) {
-        var items = this.state.items.slice();
+    handleItemAdd(newItem) {
+        let items = this.state.items.slice();
 
         items.unshift(newItem);
 
         this.setState({
             items: items
         });
-    },
+    }
 
-    _updateLocalStorage: function() {
-        var items = JSON.stringify(this.state.items);
+    _updateLocalStorage() {
+        let items = JSON.stringify(this.state.items);
         localStorage.setItem('transactions', items);
-    },
+    }
 
-    _getVisibleItems: function(items, type) {
+    _getVisibleItems(items, type) {
         if(type === 'costs') {
-            return items.filter(function(item) {
-                return (item.type === 'costs');
-            });
+            return items.filter((item) => (item.type === 'costs'));
         } else if(type === 'income') {
-            return items.filter(function(item) {
-                return (item.type === 'income');
-            });
+            return items.filter((item) => (item.type === 'income'));
         } else {
             return items;
         }
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div className="finance">
                 <h2 className="finance__header">FinanceApp</h2>
@@ -63,6 +62,6 @@ var FinanceApp = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = FinanceApp;
+export default FinanceApp;
