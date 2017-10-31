@@ -1,7 +1,11 @@
-var React = require('react');
+import React from 'react';
 
-var FinanceItem = React.createClass({
-    render: function() {
+class FinanceItem extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <tr className="transactions__tr">
                 <td className="transactions__td">{this.props.type}</td>
@@ -10,6 +14,6 @@ var FinanceItem = React.createClass({
             </tr>
         );
     }
-});
+}
 
-module.exports = FinanceItem;
+export default FinanceItem;
