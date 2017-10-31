@@ -1,49 +1,49 @@
-var React = require('react');
-var ArticlesList = require('./ArticlesList.jsx');
-var ArticlesSearch = require('./ArticlesSearch.jsx');
-var ARTICLES = require('./articles.json');
+import React from 'react';
+import ArticlesList from './ArticlesList.jsx';
+import ArticlesSearch from './ArticlesSearch.jsx';
+import ARTICLES from './articles.json';
 
-require('./ArticlesApp.css');
+import './ArticlesApp.less';
 
-var ArticlesApp = React.createClass({
-
-    getInitialState: function() {
-        return {
+class ArticlesApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             articles: [],
             searchQuery: ''
         };
-    },
 
-    componentDidMount: function() {
-        var articlesArr = Object.keys(ARTICLES).map(function(key) {
-            return ARTICLES[key];
-        });
+        this.handleItemSearch = this.handleItemSearch.bind(this);
+    }
+
+    componentDidMount() {
+        let articlesArr = Object.keys(ARTICLES).map((key) => ARTICLES[key]);
 
         if(articlesArr) {
             this.setState({
-               articles: articlesArr
+                articles: articlesArr
             });
         }
-    },
+    }
 
-    handleItemSearch: function(event) {
+    handleItemSearch(event) {
         this.setState({
             searchQuery: event.target.value
         });
-    },
+    }
 
-    _getVisibleItems: function(items, query) {
+    _getVisibleItems(items, query) {
         if(query.length) {
             query = query.toLowerCase();
-            return items.filter(function(item) {
-                var searchValue = item.title.toLowerCase();
+            return items.filter((item) => {
+                let searchValue = item.title.toLowerCase();
                 return searchValue.indexOf(query) !== -1;
             });
         }
         return items;
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div className="articles">
                 <h2 className="articles__header">ArticlesApp</h2>
@@ -54,6 +54,6 @@ var ArticlesApp = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = ArticlesApp;
+export default ArticlesApp;
