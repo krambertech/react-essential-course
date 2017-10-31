@@ -1,36 +1,42 @@
-var React = require('react');
+import React from 'react';
 
-require('./FinanceEditor.css');
+import './FinanceEditor.less';
 
-var FinanceEditor = React.createClass({
-    getInitialState: function() {
-        return {
+class FinanceEditor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             type: 'costs',
             title: '',
             sum: ''
         };
-    },
 
-    handleTypeChange: function(event) {
+        this.handleTypeChange = this.handleTypeChange.bind(this);
+        this.handleTitleChange = this.handleTitleChange.bind(this);
+        this.handleSumChange = this.handleSumChange.bind(this);
+        this.handleItemAdd = this.handleItemAdd.bind(this);
+    }
+
+    handleTypeChange(event) {
         this.setState({
-           type: event.target.value
+            type: event.target.value
         });
-    },
+    }
 
-    handleTitleChange: function(event) {
+    handleTitleChange(event) {
         this.setState({
             title: event.target.value
         });
-    },
+    }
 
-    handleSumChange: function(event) {
+    handleSumChange(event) {
         this.setState({
             sum: event.target.value
         });
-    },
+    }
 
-    handleItemAdd: function() {
-        var item = {
+    handleItemAdd() {
+        let item = {
             type: this.state.type,
             title: this.state.title,
             sum: this.state.sum,
@@ -43,9 +49,9 @@ var FinanceEditor = React.createClass({
             title: '',
             sum: ''
         });
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div className="finance__editor">
                 <div className="editor">
@@ -64,6 +70,6 @@ var FinanceEditor = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = FinanceEditor;
+export default FinanceEditor;

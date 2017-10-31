@@ -1,9 +1,10 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     entry: "./src/main.js",
     output: {
-        path: __dirname + '/public/build/',
+        path: path.join(__dirname + '/public/build/'),
         publicPath: "build/",
         filename: "bundle.js"
     },
@@ -11,12 +12,17 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: "babel",
+                loader: "babel-loader",
                 exclude: [/node_modules/, /public/]
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!autoprefixer-loader",
+                loader: "style-loader!css-loader",
+                exclude: [/node_modules/, /public/]
+            },
+            {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!less-loader",
                 exclude: [/node_modules/, /public/]
             },
             {
@@ -37,7 +43,7 @@ module.exports = {
             },
             {
                 test: /\.jsx$/,
-                loader: "react-hot!babel",
+                loader: "babel-loader",
                 exclude: [/node_modules/, /public/]
             },
             {
