@@ -1,6 +1,7 @@
 import React from 'react';
 import FinanceList from './FinanceList.jsx';
 import FinanceEditor from './FinanceEditor.jsx';
+import { Grid, Header } from 'semantic-ui-react';
 
 import './FinanceApp.less';
 
@@ -55,11 +56,13 @@ class FinanceApp extends React.Component {
 
     render() {
         return (
-            <div className="finance">
-                <h2 className="finance__header">FinanceApp</h2>
-                <FinanceEditor onItemAdd={this.handleItemAdd} />
-                <FinanceList items={this._getVisibleItems(this.state.items, this.state.type)} />
-            </div>
+            <Grid>
+                <Grid.Column>
+                    <Header as='h1'>FinanceApp</Header>
+                    <FinanceEditor onItemAdd={this.handleItemAdd} />
+                    <FinanceList items={this._getVisibleItems(this.state.items, this.state.type)} />
+                </Grid.Column>
+            </Grid>
         );
     }
 }
