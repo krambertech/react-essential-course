@@ -13,6 +13,7 @@
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.76.0"
   },
   "devDependencies": {

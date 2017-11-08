@@ -1,4 +1,5 @@
 import React from 'react';
+import { Segment } from 'semantic-ui-react';
 
 import './FinanceEditor.less';
 
@@ -53,7 +54,7 @@ class FinanceEditor extends React.Component {
 
     render() {
         return (
-            <div className="finance__editor">
+            <Segment color='purple'>
                 <div className="editor">
                     <select className="editor__select" value={this.state.type} onChange={this.handleTypeChange} >
                         <option value="costs">costs</option>
@@ -67,7 +68,7 @@ class FinanceEditor extends React.Component {
                            onChange={this.handleSumChange} />
                     <button className="editor__button" onClick={this.handleItemAdd} >Add</button>
                 </div>
-            </div>
+            </Segment>
         );
     }
 }
