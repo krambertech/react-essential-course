@@ -1,7 +1,6 @@
 import React from 'react';
 import FinanceItem from './FinanceItem.jsx';
-
-import './FinanceList.less';
+import { Table } from 'semantic-ui-react';
 
 class FinanceList extends React.Component {
     constructor(props) {
@@ -10,16 +9,15 @@ class FinanceList extends React.Component {
 
     render() {
         return (
-            <div className="finance__list">
-                <table className="transactions" width="100%">
-                    <thead className="transactions__thead">
-                    <tr className="transactions__tr">
-                        <th className="transactions__th">Type</th>
-                        <th className="transactions__th">Title</th>
-                        <th className="transactions__th">Sum</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+            <Table celled>
+                <Table.Header>
+                    <Table.Row>
+                        <Table.HeaderCell width={4}>Type</Table.HeaderCell>
+                        <Table.HeaderCell width={9}>Title</Table.HeaderCell>
+                        <Table.HeaderCell width={3}>Sum</Table.HeaderCell>
+                    </Table.Row>
+                </Table.Header>
+                <Table.Body>
                     {
                         this.props.items.map((item) => {
                             return (
@@ -32,9 +30,8 @@ class FinanceList extends React.Component {
                             );
                         })
                     }
-                    </tbody>
-                </table>
-            </div>
+                </Table.Body>
+            </Table>
         );
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Table } from 'semantic-ui-react';
 
 class FinanceItem extends React.Component {
     constructor(props) {
@@ -7,11 +8,11 @@ class FinanceItem extends React.Component {
 
     render() {
         return (
-            <tr className="transactions__tr">
-                <td className="transactions__td">{this.props.type}</td>
-                <td className="transactions__td">{this.props.title}</td>
-                <td className="transactions__td">{this.props.sum}</td>
-            </tr>
+            <Table.Row>
+                <Table.Cell>{this.props.type}</Table.Cell>
+                <Table.Cell>{this.props.title}</Table.Cell>
+                <Table.Cell>{this.props.sum}</Table.Cell>
+            </Table.Row>
         );
     }
 }
