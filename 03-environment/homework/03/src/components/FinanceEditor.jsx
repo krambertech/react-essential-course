@@ -1,6 +1,5 @@
 import React from 'react';
-
-import './FinanceEditor.less';
+import { Segment, Form } from 'semantic-ui-react';
 
 class FinanceEditor extends React.Component {
     constructor(props) {
@@ -14,12 +13,12 @@ class FinanceEditor extends React.Component {
         this.handleTypeChange = this.handleTypeChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleSumChange = this.handleSumChange.bind(this);
-        this.handleItemAdd = this.handleItemAdd.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleTypeChange(event) {
+    handleTypeChange(event, data) {
         this.setState({
-            type: event.target.value
+            type: data.value
         });
     }
 
@@ -35,7 +34,7 @@ class FinanceEditor extends React.Component {
         });
     }
 
-    handleItemAdd() {
+    handleSubmit() {
         let item = {
             type: this.state.type,
             title: this.state.title,
@@ -52,22 +51,37 @@ class FinanceEditor extends React.Component {
     }
 
     render() {
+        const stateOptions = [
+            {
+                key: 'costs',
+                value: 'costs',
+                text: 'costs'
+            },
+            {
+                key: 'income',
+                value: 'income',
+                text: 'income'
+            }
+        ];
+
         return (
-            <div className="finance__editor">
-                <div className="editor">
-                    <select className="editor__select" value={this.state.type} onChange={this.handleTypeChange} >
-                        <option value="costs">costs</option>
-                        <option value="income">income</option>
-                    </select>
-                    <input className="editor__field editor__field_title" type="text" placeholder="Title"
-                           value={this.state.title}
-                           onChange={this.handleTitleChange} />
-                    <input className="editor__field editor__field_sum" type="number" placeholder="Sum"
-                           value={this.state.sum}
-                           onChange={this.handleSumChange} />
-                    <button className="editor__button" onClick={this.handleItemAdd} >Add</button>
-                </div>
-            </div>
+            <Segment>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group style={{marginBottom: 0}}>
+                        <Form.Select fluid width={4}
+                            options={stateOptions}
+                            defaultValue={this.state.type}
+                            onChange={this.handleTypeChange} />
+                        <Form.Input width={7} placeholder="Title"
+                                    value={this.state.title}
+                                    onChange={this.handleTitleChange} />
+                        <Form.Input type="number" placeholder="Sum" width={3}
+                                    value={this.state.sum}
+                                    onChange={this.handleSumChange} />
+                        <Form.Button content="Add" />
+                    </Form.Group>
+                </Form>
+            </Segment>
         );
     }
 }
