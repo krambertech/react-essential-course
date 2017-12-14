@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW: 01</title>
+    <script src="../../../src/js/react.js"></script>
+    <script src="../../../src/js/react-dom.js"></script>
+    <script src="../../../src/js/browser.js"></script>
+</head>
+<body>
+    <div id='content'></div>
+
+    <script type="text/babel">
+        var Article = React.createClass({
+            render: function() {
+                return (
+                    <div>
+                        <h1>{this.props.title}</h1>
+                        <h5>{this.props.author}</h5>
+                        <div>{this.props.body}</div>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <Article title="Заголовок статьи" author="Автор статьи" body="Текст статьи." />,
+            document.getElementById('content')
+        );
+    </script>
+</body>
+</html>

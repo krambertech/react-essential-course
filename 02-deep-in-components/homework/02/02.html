@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script src="../../../../src/js/react.js"></script>
+    <script src="../../../../src/js/react-dom.js"></script>
+    <script src="../../../../src/js/browser.js"></script>
+</head>
+<body>
+    <div id='mount-point'></div>
+
+    <script type="text/babel">
+        var Timer = React.createClass({
+            getInitialState: function() {
+                return {
+                    seconds: 0,
+                    isPaused: true
+                }
+            },
+
+            componentDidMount: function() {
+                this.timer = setInterval(this.tick, 1000);
+            },
+
+            componentWillUnmount: function() {
+                clearInterval(this.timer);
+            },
+
+            tick: function() {
+                if(!this.state.isPaused) {
+                    this.setState({
+                        seconds: this.state.seconds + 1
+                    });
+                }
+            },
+
+            handlePause: function() {
+                this.setState({
+                    isPaused: true
+                });
+            },
+
+            handlePlay: function() {
+                this.setState({
+                    isPaused: false
+                });
+            },
+
+            handleClear: function() {
+                this.handlePause();
+                this.setState({
+                    seconds: 0
+                });
+            },
+
+            render: function() {
+                return (
+                    <div>
+                        <h4>Уже прошло {this.state.seconds} секунд</h4>
+                        <button onClick={this.handlePlay} disabled={!this.state.isPaused}>Старт</button>
+                        <button onClick={this.handlePause} disabled={this.state.isPaused}>Пауза</button>
+                        <button onClick={this.handleClear} disabled={this.state.seconds === 0}>Сначала</button>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <Timer />,
+            document.getElementById('mount-point')
+        );
+    </script>
+</body>
+</html>
