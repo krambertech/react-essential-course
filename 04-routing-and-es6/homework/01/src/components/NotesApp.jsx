@@ -2,7 +2,6 @@ import React from 'react';
 import NoteSearch from './NoteSearch.jsx';
 import NoteEditor from './NoteEditor.jsx';
 import NotesGrid from './NotesGrid.jsx';
-
 import './NotesApp.less';
 
 class NotesApp extends React.Component {

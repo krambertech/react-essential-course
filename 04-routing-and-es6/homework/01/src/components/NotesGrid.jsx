@@ -1,6 +1,6 @@
 import React from 'react';
 import Note from './Note.jsx';
-
+import PropTypes from 'prop-types';
 import './NotesGrid.less';
 
 class NotesGrid extends React.Component {
@@ -48,5 +48,10 @@ class NotesGrid extends React.Component {
         );
     }
 }
+
+NotesGrid.propTypes = {
+    notes: PropTypes.array,
+    onNoteDelete: PropTypes.func.isRequired
+};
 
 export default NotesGrid;

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './NoteSearch.less';
 
 class NoteSearch extends React.Component {
@@ -21,5 +21,10 @@ class NoteSearch extends React.Component {
         );
     }
 }
+
+NoteSearch.propTypes = {
+    value: PropTypes.string,
+    onSearch: PropTypes.func.isRequired
+};
 
 export default NoteSearch;

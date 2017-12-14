@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './Note.less';
 
 class Note extends React.Component {
@@ -20,5 +20,11 @@ class Note extends React.Component {
         );
     }
 }
+
+Note.propTypes = {
+    color: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired,
+    onDelete: PropTypes.func.isRequired
+};
 
 export default Note;

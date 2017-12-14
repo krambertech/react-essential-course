@@ -1,6 +1,6 @@
 import React from 'react';
 import NoteColor from './NoteColor.jsx';
-
+import PropTypes from 'prop-types';
 import './NoteEditor.less';
 
 class NoteEditor extends React.Component {
@@ -62,5 +62,9 @@ class NoteEditor extends React.Component {
         );
     }
 }
+
+NoteEditor.propTypes = {
+    onNoteAdd: PropTypes.func.isRequired
+};
 
 export default NoteEditor;

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './NoteColor.less';
 
 class NoteColor extends React.Component {
@@ -71,5 +71,10 @@ class NoteColor extends React.Component {
         );
     }
 }
+
+NoteColor.propTypes = {
+    defaultColor: PropTypes.string.isRequired,
+    onChangeColor: PropTypes.func.isRequired
+};
 
 export default NoteColor;
