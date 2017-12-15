@@ -1,0 +1,26 @@
+[
+  {
+    "title": "First article",
+    "description": "First article description",
+    "text": "First article's full text",
+    "id": "1"
+  },
+  {
+    "title": "Second article",
+    "description": "Second article description",
+    "text": "Second article's full text",
+    "id": "2"
+  },
+  {
+    "title": "Third article",
+    "description": "Third article description",
+    "text": "Third article's full text",
+    "id": "3"
+  },
+  {
+    "title": "Fourth article",
+    "description": "Fourth article description",
+    "text": "Fourth article's full text",
+    "id": "4"
+  }
+]
