@@ -1,0 +1,39 @@
+@import "../styles/palette.less";
+
+.MessagePreview {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: @card-background-color;
+    border-bottom: 1px solid @divider-color;
+    border-right: 1px solid @divider-color;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten(@primary-color, 55%);
+    }
+
+    &.selected {
+        border-right: none;
+
+        &:hover {
+            background-color: @card-background-color;
+        }
+
+        .title,
+        .from {
+            font-weight: bold;
+        }
+    }
+
+    .title {
+        font-size: 16px;
+        color: @text-color;
+    }
+
+    .from {
+        font-size: 14px;
+        color: @secondary-text-color;
+    }
+}
