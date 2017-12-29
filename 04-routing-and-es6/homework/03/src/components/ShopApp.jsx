@@ -4,6 +4,7 @@ import { Segment } from 'semantic-ui-react';
 import ShopMenu from './ShopMenu.jsx';
 import ShopHome from './ShopHome.jsx';
 import ShopGoods from './ShopGoods.jsx';
+import ShopGood from './ShopGood.jsx';
 import ShopCart from './ShopCart.jsx';
 
 class ShopApp extends React.Component {
@@ -13,15 +14,14 @@ class ShopApp extends React.Component {
 
     render() {
         return (
-            <Segment 
-                inverted
-                textAlign='center'
+            <Segment
                 style={{ minHeight: 700, padding: '1em 0em' }}
                 vertical
             >
                 <ShopMenu />
                 <Route path="/home" component={ShopHome} />
                 <Route path="/goods" component={ShopGoods} />
+                <Route path="/good/:id" component={ShopGood} />
                 <Route path="/cart" component={ShopCart} />
             </Segment>
         );
