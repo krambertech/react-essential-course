@@ -10,6 +10,19 @@ import ShopCart from './ShopCart.jsx';
 class ShopApp extends React.Component {
     constructor(props){
         super(props);
+        
+        this.state = {
+            cart: [
+                {
+                    id: '2',
+                    count: '1'
+                },
+                {
+                    id: '8',
+                    count: '2'
+                }
+            ]
+        };
     }
 
     render() {
@@ -22,7 +35,7 @@ class ShopApp extends React.Component {
                 <Route path="/home" component={ShopHome} />
                 <Route path="/goods" component={ShopPageGoods} />
                 <Route path="/good/:id" component={ShopGood} />
-                <Route path="/cart" component={ShopCart} />
+                <Route path="/cart" render={() => ( <ShopCart items={this.state.cart}/> )} />
             </Segment>
         );
     }
