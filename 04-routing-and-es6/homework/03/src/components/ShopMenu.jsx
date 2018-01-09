@@ -10,7 +10,7 @@ class ShopMenu extends React.Component {
     render() {
         return (
             <Container>
-                <Menu pointing secondary size='large'>
+                <Menu size='large'>
                     <Menu.Item as={Link} to="/home">Home</Menu.Item>
                     <Menu.Item as={Link} to="/goods">Goods</Menu.Item>
                     <Menu.Item as={Link} to="/cart">Cart</Menu.Item>
