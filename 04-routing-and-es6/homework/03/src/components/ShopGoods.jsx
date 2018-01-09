@@ -1,33 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Segment, Grid, Card } from 'semantic-ui-react';
-import goods from '../goods.json';
-
 
 class ShopGoods extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            items: []
-        };
-    }
-
-    componentDidMount() {
-        let items = Object.keys(goods).map((key) => goods[key]);
-
-        if(items) {
-            this.setState({
-                items: items
-            });
-        }
     }
     
     render() {
 
-        const items = this.state.items.map((item) => {
+        const items = this.props.items.map((item) => {
             return (
-                <Grid.Column computer={4} mobile={16} tablet={8} key={item.id}>
+                <Grid.Column computer={4} mobile={16} tablet={8} key={item.id} style={{ paddingBottom: '20px' }}>
                     <Card
                         fluid
                         header={item.title}
@@ -41,11 +25,11 @@ class ShopGoods extends React.Component {
         });
 
         return (
-            <Segment vertical>
-                <Grid container>
+            <Grid container>
+                <Grid.Row>
                     {items}
-                </Grid>
-            </Segment>
+                </Grid.Row>
+            </Grid>
         );
     }
 }

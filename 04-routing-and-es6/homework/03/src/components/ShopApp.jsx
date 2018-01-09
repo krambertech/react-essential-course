@@ -3,7 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import { Segment } from 'semantic-ui-react';
 import ShopMenu from './ShopMenu.jsx';
 import ShopHome from './ShopHome.jsx';
-import ShopGoods from './ShopGoods.jsx';
+import ShopPageGoods from './ShopPageGoods.jsx';
 import ShopGood from './ShopGood.jsx';
 import ShopCart from './ShopCart.jsx';
 
@@ -20,7 +20,7 @@ class ShopApp extends React.Component {
             >
                 <ShopMenu />
                 <Route path="/home" component={ShopHome} />
-                <Route path="/goods" component={ShopGoods} />
+                <Route path="/goods" component={ShopPageGoods} />
                 <Route path="/good/:id" component={ShopGood} />
                 <Route path="/cart" component={ShopCart} />
             </Segment>
