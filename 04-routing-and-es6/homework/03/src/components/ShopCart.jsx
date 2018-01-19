@@ -1,58 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Header, Segment, Grid, Item, Button, Icon, Label } from 'semantic-ui-react';
-import goods from '../goods.json';
 
 class ShopCart extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    componentDidMount() {
-        // let items = Object.keys(goods).map((key) => goods[key]);
-        
-        
-        
-        // let items = this.props.items.map((currentValue, index, array) => {
-        //     console.log("currentValue: " + currentValue);
-        //     console.log("index: " + index);
-        //     console.log("array: " + array);
-        // });
-
-        // if(items) {
-        //     this.setState({
-        //         items: items
-        //     });
-        // }
-    }
-    
     render() {
-
-        console.log(this.props.items);
-
-        // const items = this.state.items.map((item) => {
-        //     return (
-        //         <Item key={item.id}>
-        //             <Item.Image size='tiny' src={item.image} />
-        //             <Item.Content verticalAlign='middle'>
-        //                 <Item.Header as={Link} to={'/good/' + item.id}>{item.title}</Item.Header>
-        //                 <Item.Meta>
-        //                     <span className='price'>{item.price + ' руб.'}</span>,
-        //                 </Item.Meta>
-        //                 <Item.Extra>
-        //                     <Label>1 шт.</Label>
-        //                     <Button.Group basic size="mini">
-        //                         <Button icon="plus"/>
-        //                         <Button icon="minus" />
-        //                     </Button.Group>
-        //                     <Button basic size="mini" icon="remove" />
-        //                 </Item.Extra>
-        //             </Item.Content>
-        //         </Item>
-        //     );
-        // });
-
-        const items = '';
+        const onItemIncrease = this.props.onItemIncrease;
+        const onItemReduce = this.props.onItemReduce;
+        const onItemRemove = this.props.onItemRemove;
+        const items = this.props.items.map((item) => {
+            return (
+                 <Item key={item.id}>
+                     <Item.Image size='tiny' src={item.image} />
+                     <Item.Content verticalAlign='middle'>
+                         <Item.Header as={Link} to={'/good/' + item.id}>{item.title}</Item.Header>
+                         <Item.Meta>
+                             <span className='price'>{item.price + ' руб.'}</span>,
+                         </Item.Meta>
+                         <Item.Extra>
+                             <Label>{item.count} шт.</Label>
+                             <Button.Group basic size="mini">
+                                 <Button icon="plus" onClick={() => onItemIncrease(item.id)}/>
+                                 <Button icon="minus" onClick={() => onItemReduce(item.id)}/>
+                             </Button.Group>
+                             <Button basic size="mini" onClick={() => onItemRemove(item.id)}>Удалить</Button>
+                         </Item.Extra>
+                     </Item.Content>
+                 </Item>
+            );
+        });
 
         return (
             <Segment vertical>
