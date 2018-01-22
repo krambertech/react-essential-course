@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW: 04</title>
+    <script src="../../../src/js/react.js"></script>
+    <script src="../../../src/js/react-dom.js"></script>
+    <script src="../../../src/js/browser.js"></script>
+
+    <link rel="stylesheet" href="04.css">
+</head>
+<body>
+    <div id='content'></div>
+
+    <script type="text/babel">
+        var Calculator = React.createClass({
+
+            setButtonCalcAction: function(value) {
+                var query = this.state.query + value;
+                var result = this.getCalculateResult(query);
+                this.setState({
+                    query: result
+                });
+            },
+
+            getCalculateResult: function(query) {
+                var equalityIndex = query.indexOf('=');
+                var resetIndex = query.indexOf('Reset');
+                var cleanQuery;
+                var result;
+
+                if(query.length) {
+                    if(equalityIndex > 0) {
+                        cleanQuery = query.substr(0, equalityIndex);
+                        result = eval(cleanQuery);
+                        query += result;
+                    }
+                    if(resetIndex > 0) {
+                        query = '';
+                    }
+                    return query;
+                }
+            },
+
+            getInitialState: function() {
+                return {
+                    query: ''
+                }
+            },
+
+            handleButton: function(value) {
+                this.setButtonCalcAction(value);
+            },
+
+            renderButton: function(value) {
+                return <Button value={value} onClick={() => this.handleButton(value)} />;
+            },
+
+            render: function() {
+                return (
+                    <div className="calc">
+                        <input className="calc__input" type="text" disabled value={this.state.query} />
+                            <div className="calc__row">
+                                {this.renderButton(7)}
+                                {this.renderButton(8)}
+                                {this.renderButton(9)}
+                                {this.renderButton('/')}
+                            </div>
+                            <div className="calc__row">
+                                {this.renderButton(4)}
+                                {this.renderButton(5)}
+                                {this.renderButton(6)}
+                                {this.renderButton('*')}
+                            </div>
+                            <div className="calc__row">
+                                {this.renderButton(1)}
+                                {this.renderButton(2)}
+                                {this.renderButton(3)}
+                                {this.renderButton('-')}
+                            </div>
+                            <div className="calc__row">
+                                {this.renderButton(0)}
+                                {this.renderButton('.')}
+                                {this.renderButton('=')}
+                                {this.renderButton('+')}
+                            </div>
+                            <div className="calc__row">
+                                {this.renderButton('Reset')}
+                            </div>
+                    </div>
+                );
+            }
+        });
+
+        var Button = React.createClass({
+            render: function() {
+                return (
+                    <button className="calc__button" onClick={() => this.props.onClick()}>
+                        {this.props.value}
+                    </button>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <Calculator />,
+            document.getElementById('content')
+        );
+    </script>
+</body>
+</html>

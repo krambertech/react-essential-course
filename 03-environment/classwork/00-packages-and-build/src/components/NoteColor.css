@@ -1,0 +1,28 @@
+.colors {
+    display: flex;
+}
+
+.colors__label {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.colors__label:hover {
+    cursor: pointer;
+}
+
+.colors__radio {
+    display: none;
+}
+
+.colors__radio:checked + .colors__label:before {
+    content: '#';
+    color: white;
+
+}

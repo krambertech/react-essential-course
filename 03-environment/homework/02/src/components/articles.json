@@ -1,0 +1,22 @@
+{
+  "1": {
+    "title": "First article",
+    "description": "First article description",
+    "id": "1"
+  },
+  "2": {
+    "title": "Second article",
+    "description": "Second article description",
+    "id": "2"
+  },
+  "3": {
+    "title": "Third article",
+    "description": "Third article description",
+    "id": "3"
+  },
+  "4": {
+    "title": "Fourth article",
+    "description": "Fourth article description",
+    "id": "4"
+  }
+}
