@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Segment, Grid, Image, Header, Button, Icon } from 'semantic-ui-react';
 import Parser from 'html-react-parser';
 import goods from '../goods.json';
@@ -28,6 +29,7 @@ class ShopGood extends React.Component {
 
     render() {
         const { item } = this.state;
+        const onItemAdd = this.context.onCartItemAdd;
 
         return (
             <Segment vertical>
@@ -45,7 +47,8 @@ class ShopGood extends React.Component {
                                 <Button 
                                     content={item.price + ' руб.'}
                                     icon='shop' 
-                                    labelPosition='right' 
+                                    labelPosition='right'
+                                    onClick={() => onItemAdd(item.id)}
                                 />
                             </p>
                             {Parser(item.description)}
@@ -56,5 +59,9 @@ class ShopGood extends React.Component {
         );
     }
 }
+
+ShopGood.contextTypes = {
+    onCartItemAdd: PropTypes.func
+};
 
 export default ShopGood;

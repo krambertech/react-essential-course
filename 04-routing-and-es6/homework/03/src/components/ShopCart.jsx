@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import { Header, Segment, Grid, Item, Button, Icon, Label } from 'semantic-ui-react';
 
@@ -8,9 +9,9 @@ class ShopCart extends React.Component {
     }
 
     render() {
-        const onItemIncrease = this.props.onItemIncrease;
-        const onItemReduce = this.props.onItemReduce;
-        const onItemRemove = this.props.onItemRemove;
+        const onItemAdd = this.context.onCartItemAdd;
+        const onItemReduce = this.context.onCartItemReduce;
+        const onItemRemove = this.context.onCartItemRemove;
         const items = this.props.items.map((item) => {
             return (
                  <Item key={item.id}>
@@ -23,7 +24,7 @@ class ShopCart extends React.Component {
                          <Item.Extra>
                              <Label>{item.count} шт.</Label>
                              <Button.Group basic size="mini">
-                                 <Button icon="plus" onClick={() => onItemIncrease(item.id)}/>
+                                 <Button icon="plus" onClick={() => onItemAdd(item.id)}/>
                                  <Button icon="minus" onClick={() => onItemReduce(item.id)}/>
                              </Button.Group>
                              <Button basic size="mini" onClick={() => onItemRemove(item.id)}>Удалить</Button>
@@ -49,5 +50,11 @@ class ShopCart extends React.Component {
         );
     }
 }
+
+ShopCart.contextTypes = {
+    onCartItemAdd: PropTypes.func,
+    onCartItemReduce: PropTypes.func,
+    onCartItemRemove: PropTypes.func
+};
 
 export default ShopCart;

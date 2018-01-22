@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 import { Segment } from 'semantic-ui-react';
 import ShopMenu from './ShopMenu.jsx';
@@ -14,57 +15,116 @@ class ShopApp extends React.Component {
 
         this.state = {
             items: [],
-            cart: [
-                {
-                    id: '2',
-                    count: 1
-                },
-                {
-                    id: '8',
-                    count: 2
-                }
-            ]
+            cart: []
+        };
+
+        this.handleCartItemAdd = this.handleCartItemAdd.bind(this);
+        this.handleCartItemReduce = this.handleCartItemReduce.bind(this);
+        this.handleCartItemRemove = this.handleCartItemRemove.bind(this);
+    }
+
+    getChildContext() {
+        return {
+            onCartItemAdd: this.handleCartItemAdd,
+            onCartItemReduce: this.handleCartItemReduce,
+            onCartItemRemove: this.handleCartItemRemove
         };
     }
 
     componentDidMount() {
-        let items = Object.keys(goods).map((key) => goods[key]);
+        const items = Object.keys(goods).map((key) => goods[key]);
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let state = {};
 
-        if(items) {
-            this.setState({
-                items: items
-            });
+        if (items.length) {
+            state.items = items;
+        }
+
+        if (cart.length) {
+            state.cart = cart;
+        }
+
+        if(items.length || cart.length) {
+            this.setState(state);
         }
     }
 
+    componentDidUpdate() {
+        this._updateLocalStorage();
+    }
+
     handleCartItemAdd(id) {
-        let newCart = this.state.cart.slice();
+        let newCart = this._getClonedCart(this.state.cart);
+
         if (newCart.length) {
             let cartItem = newCart.find((item) => item.id === id);
             if (cartItem) {
                 cartItem.count++;
-            } {
+            } else {
                 newCart.push({id: id, count: 1});
             }
         } else {
-            newCart = [{id: id, count: 1}];
+            newCart.push({id: id, count: 1});
         }
 
-        // TODO: Дописать добавление в корзину
-        console.log("newCart:", newCart);
-        console.log("cart:", this.state.cart);
-
-        //this.setState({
-        //    cart: newCart
-        //});
+        this.setState({
+            cart: newCart
+        });
     }
 
     handleCartItemReduce(id) {
-        this._changeCart(this.state.cart, id, 'reduce');
+        let newCart = this._getClonedCart(this.state.cart);
+
+        if (newCart.length) {
+            for (let i = 0, len = newCart.length; i < len; i++) {
+                let item = newCart[i];
+                if (item.id === id) {
+                    if (item.count === 1) {
+                        newCart.splice(i, 1);
+                    } else {
+                        item.count--;
+                    }
+                    break;
+                }
+            }
+
+            this.setState({
+                cart: newCart
+            });
+        }
     }
 
     handleCartItemRemove(id) {
-        this._changeCart(this.state.cart, id, 'remove');
+        let newCart = this._getClonedCart(this.state.cart);
+
+        if (newCart.length) {
+            for (let i = 0, len = newCart.length; i < len; i++) {
+                let item = newCart[i];
+                if (item.id === id) {
+                    newCart.splice(i, 1);
+                    break;
+                }
+            }
+
+            this.setState({
+                cart: newCart
+            });
+        }
+    }
+
+    _updateLocalStorage() {
+        const cart = JSON.stringify(this.state.cart);
+        localStorage.setItem('cart', cart);
+    }
+
+    _getClonedCart(cart) {
+        return cart.map((item) => {
+            const { id, count } = item;
+            return {
+                id,
+                count
+            };
+        });
     }
 
     _getVisibleCartItems(items, cart) {
@@ -99,9 +159,6 @@ class ShopApp extends React.Component {
                        render={() => (
                             <ShopCart
                                 items={this._getVisibleCartItems(this.state.items, this.state.cart)}
-                                onItemIncrease={this.handleCartItemAdd.bind(this)}
-                                onItemReduce={this.handleCartItemReduce.bind(this)}
-                                onItemRemove={this.handleCartItemRemove.bind(this)}
                             />
                        )}
                 />
@@ -109,5 +166,11 @@ class ShopApp extends React.Component {
         );
     }
 }
+
+ShopApp.childContextTypes = {
+    onCartItemAdd: PropTypes.func,
+    onCartItemReduce: PropTypes.func,
+    onCartItemRemove: PropTypes.func
+};
 
 export default ShopApp;
